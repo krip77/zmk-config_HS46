@@ -117,10 +117,10 @@
  */
 
             bindings = <
-&kp Copy  &kp N1    &kp N2    &kp N3     &kp N4     &kp N5                                             &kp N6     &kp N7       &kp N8    &kp N9     &kp N0       &kp LBKT
-&kp Cut   &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp EXCL                                           &kp MINUS  &kp LEFT     &kp UP    &kp DOWN   &kp PAGE_UP  &kp SQT
-&trans    &kp F1    &kp F2    &kp F3     &kp F4     &kp F5    &kp Undo                       &kp Redo  &kp END    &kp PAGE_UP  &kp DOWN  &kp PG_DN  &kp F10      &kp RCTRL
-                                         &trans     &trans    &trans    &trans    &mo ADJ_L  &trans    &kp LC(C)  &kp LC(V)
+&kp Copy  &kp N1    &kp N2    &kp N3     &kp N4     &kp N5                                             &kp N6         &kp N7       &kp N8    &kp N9     &kp N0       &kp LBKT
+&kp Cut   &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp EXCL                                           &kp LS(MINUS)  &kp LEFT     &kp UP    &kp DOWN   &kp PAGE_UP  &kp SQT
+&trans    &kp F1    &kp F2    &kp F3     &kp F4     &kp F5    &kp Undo                       &kp Redo  &kp END        &kp PAGE_UP  &kp DOWN  &kp PG_DN  &kp F10      &kp RCTRL
+                                         &trans     &trans    &trans    &trans    &mo ADJ_L  &trans    &kp LC(C)      &kp LC(V)
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -136,10 +136,10 @@
  */
 
             bindings = <
-&kp INS  &kp EXCL  &kp AT     &kp HASH   &kp DOLLAR  &kp PERCENT                                            &kp CARET   &kp AMPS      &kp ASTRK     &kp LPAR  &kp RPAR  &kp DEL
-&none    &kp BSLH  &kp MINUS  &kp EQUAL  &kp LBKT    &kp RBKT                                               &kp HOME    &kp RSHFT     &kp RCTRL     &kp LALT  &kp RGUI  &kp END
-&trans   &kp PIPE  &kp UNDER  &kp PLUS   &kp LBRC    &kp RBRC     &sk RALT                       &kp K_APP  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PP  &none     &kp RCTRL
-                                         &trans      &trans       &trans    &mo ADJ_L    &trans  &trans     &trans      &trans
+&kp INS  &kp EXCL  &kp RA(LS(NUMBER_2))  &kp HASH    &kp RA(N5)  &kp PERCENT                                             &kp CARET      &kp AMPS      &kp ASTRK     &kp LPAR  &kp RPAR  &kp DEL
+&none    &kp BSLH  &kp MINUS             &kp LS(N0)  &kp LS(N8)  &kp LS(RBKT)                                            &kp SLASH      &kp RSHFT     &kp RCTRL     &kp LALT  &kp RGUI  &kp END
+&trans   &kp PIPE  &kp UNDER             &kp PLUS    &kp RA(N8)  &kp RA(N9)    &sk RALT                       &kp K_APP  &kp LS(SLASH)  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PP  &none     &kp RCTRL
+                                                     &trans      &trans        &trans    &mo ADJ_L    &trans  &trans     &trans         &trans
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
