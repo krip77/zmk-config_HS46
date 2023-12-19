@@ -30,6 +30,11 @@
             bindings = <&kp ENTER>;
             key-positions = <16 19>;
         };
+
+        backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <13 22>;
+        };
     };
 
     macros {
