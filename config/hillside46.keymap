@@ -118,7 +118,7 @@
 
             bindings = <
 &kp Copy  &kp N1    &kp N2    &kp N3     &kp N4     &kp N5                                             &kp N6     &kp N7       &kp N8    &kp N9     &kp N0       &kp LBKT
-&kp Cut   &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp EXCL                                           &kp PLUS   &kp LEFT     &kp UP    &kp DOWN   &kp PAGE_UP  &kp SQT
+&kp Cut   &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp EXCL                                           &kp MINUS  &kp LEFT     &kp UP    &kp DOWN   &kp PAGE_UP  &kp SQT
 &trans    &kp F1    &kp F2    &kp F3     &kp F4     &kp F5    &kp Undo                       &kp Redo  &kp END    &kp PAGE_UP  &kp DOWN  &kp PG_DN  &kp F10      &kp RCTRL
                                          &trans     &trans    &trans    &trans    &mo ADJ_L  &trans    &kp LC(C)  &kp LC(V)
             >;
