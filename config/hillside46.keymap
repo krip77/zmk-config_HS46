@@ -45,10 +45,10 @@
  */
 
             bindings = <
-&kp ESCAPE  &kp Q  &kp W  &kp E  &kp R     &kp T                                                           &kp Y     &kp U      &kp I      &kp O    &kp P      &kp LBKT
-&kp TAB     &kp A  &kp S  &kp D  &kp F     &kp G                                                           &kp H     &kp J      &kp K      &kp L    &kp SEMI   &kp SQT
-&kp LCTRL   &kp Z  &kp X  &kp C  &kp V     &kp B      &kp PRINTSCREEN                          &caps_word  &kp N     &kp M      &kp COMMA  &kp DOT  &kp SLASH  &kp ENTER
-                                 &kp LGUI  &kp LSHFT  &sk BACKSPACE    &mo NAV_L    &mo SYM_L  &kp SPACE   &kp LALT  &kp LCTRL
+&kp ESCAPE  &kp Q  &kp W  &kp E  &kp R     &kp T                                                    &kp Y     &kp U      &kp I      &kp O    &kp P      &kp BACKSPACE
+&kp TAB     &kp A  &kp S  &kp D  &kp F     &kp G                                                    &kp H     &kp J      &kp K      &kp L    &kp SEMI   &kp ENTER
+&kp LCTRL   &kp Z  &kp X  &kp C  &kp V     &kp B      &kp PRINTSCREEN                  &caps_word   &kp N     &kp M      &kp COMMA  &kp DOT  &kp SLASH  &kp DELETE
+                                 &kp LGUI  &kp LSHFT  &lt 4 BACKSPACE  &mo 4    &mo 3  &lt 3 SPACE  &kp LALT  &kp LCTRL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -102,8 +102,8 @@
  */
 
             bindings = <
-&kp Copy  &kp N1    &kp N2    &kp N3     &kp N4     &kp N5                                             &kp N6     &kp N7       &kp N8    &kp N9     &kp N0       &trans
-&kp Cut   &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp EXCL                                           &kp QMARK  &kp LEFT     &kp UP    &kp DOWN   &kp PAGE_UP  &kp PG_DN
+&kp Copy  &kp N1    &kp N2    &kp N3     &kp N4     &kp N5                                             &kp N6     &kp N7       &kp N8    &kp N9     &kp N0       &kp LBKT
+&kp Cut   &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp EXCL                                           &kp QMARK  &kp LEFT     &kp UP    &kp DOWN   &kp PAGE_UP  &kp SQT
 &trans    &kp F1    &kp F2    &kp F3     &kp F4     &kp F5    &kp Undo                       &kp Redo  &kp END    &kp PAGE_UP  &kp DOWN  &kp PG_DN  &kp F10      &kp RCTRL
                                          &trans     &trans    &trans    &trans    &mo ADJ_L  &trans    &trans     &trans
             >;
