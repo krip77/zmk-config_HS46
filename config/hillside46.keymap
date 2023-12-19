@@ -136,10 +136,10 @@
  */
 
             bindings = <
-&kp INS  &kp EXCL  &kp RA(LS(NUMBER_2))  &kp HASH    &kp RA(N5)  &kp PERCENT                                            &kp CARET      &kp AMPS      &kp ASTRK     &kp LPAR  &kp RPAR  &kp DEL
-&none    &kp BSLH  &kp MINUS             &kp LS(N0)  &kp LS(N8)  &kp LS(N9)                                             &kp SLASH      &kp RSHFT     &kp RCTRL     &kp LALT  &kp RGUI  &kp END
-&trans   &kp PIPE  &kp UNDER             &kp PLUS    &kp RA(N8)  &kp RA(N9)   &sk RALT                       &kp K_APP  &kp LS(SLASH)  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PP  &none     &kp RCTRL
-                                                     &trans      &trans       &trans    &mo ADJ_L    &trans  &trans     &trans         &trans
+&kp INS  &kp EXCL  &kp RA(NUMBER_2)  &kp HASH    &kp RA(N5)  &kp PERCENT                                            &kp CARET      &kp AMPS      &kp ASTRK     &kp LPAR  &kp RPAR  &kp DEL
+&none    &kp BSLH  &kp MINUS         &kp LS(N0)  &kp LS(N8)  &kp LS(N9)                                             &kp SLASH      &kp RSHFT     &kp RCTRL     &kp LALT  &kp RGUI  &kp END
+&trans   &kp PIPE  &kp UNDER         &kp PLUS    &kp RA(N8)  &kp RA(N9)   &sk RALT                       &kp K_APP  &kp LS(SLASH)  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PP  &none     &kp RCTRL
+                                                 &trans      &trans       &trans    &mo ADJ_L    &trans  &trans     &trans         &trans
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
