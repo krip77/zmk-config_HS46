@@ -61,10 +61,10 @@
  */
 
             bindings = <
-&kp ESCAPE  &kp Q  &kp W  &kp E  &kp R     &kp T                                                    &kp Y     &kp U      &kp I      &kp O    &kp P      &kp BACKSPACE
-&kp TAB     &kp A  &kp S  &kp D  &kp F     &kp G                                                    &kp H     &kp J      &kp K      &kp L    &kp SEMI   &kp ENTER
-&kp LCTRL   &kp Z  &kp X  &kp C  &kp V     &kp B      &kp PRINTSCREEN                  &caps_word   &kp N     &kp M      &kp COMMA  &kp DOT  &kp SLASH  &kp DELETE
-                                 &kp LGUI  &kp LSHFT  &lt 4 BACKSPACE  &mo 5    &mo 6  &lt 3 SPACE  &kp LALT  &kp LCTRL
+&kp ESCAPE  &kp Q  &kp W  &kp E  &kp R     &kp T                                                        &kp Y     &kp U      &kp I      &kp O    &kp P      &kp BACKSPACE
+&kp TAB     &kp A  &kp S  &kp D  &kp F     &kp G                                                        &kp H     &kp J      &kp K      &kp L    &kp SEMI   &kp ENTER
+&kp LCTRL   &kp Z  &kp X  &kp C  &kp V     &kp B      &caps_word                       &kp PRINTSCREEN  &kp N     &kp M      &kp COMMA  &kp DOT  &kp SLASH  &kp DELETE
+                                 &kp LGUI  &kp LSHFT  &lt 4 BACKSPACE  &mo 5    &mo 6  &lt 3 SPACE      &kp LALT  &kp LCTRL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -173,7 +173,8 @@
                                  &trans   &trans   &trans  &trans    &trans  &trans  &trans     &trans
             >;
         };
-swedish_layer {
+
+        swedish_layer {
             /* SWE
  * -------------------------------------------------------------------------------------------------------------------------------------
  * | `     |   Q   |   W   |   E   |   R   |   T   |-----------------------------------|   Y   |   U   |   I   |   O   |   P   | BKSPC |
@@ -189,8 +190,5 @@ swedish_layer {
                                  &kp LGUI  &kp LSHFT  &lt 4 BACKSPACE  &mo 5    &mo 6  &lt 3 SPACE  &kp LALT  &kp LCTRL
             >;
         };
-
-
-
     };
 };
