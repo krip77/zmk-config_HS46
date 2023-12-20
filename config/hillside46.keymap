@@ -36,6 +36,11 @@
             bindings = <&kp BACKSPACE>;
             key-positions = <13 22>;
         };
+
+        swe {
+            bindings = <&tog 7>;
+            key-positions = <41 42>;
+        };
     };
 
     macros {
@@ -184,8 +189,8 @@
  */
 
             bindings = <
-&kp ESCAPE  &kp Q  &kp W  &kp E  &kp R     &kp T                                                    &kp Y     &kp U      &kp I      &kp O    &kp P      &kp BACKSPACE
-&kp TAB     &kp A  &kp S  &kp D  &kp F     &kp G                                                    &kp H     &kp J      &kp K      &kp L    &kp SEMI   &kp ENTER
+&kp ESCAPE  &kp Q  &kp W  &kp E  &kp R     &kp T                                                    &kp Y     &kp U      &kp I      &kp O    &kp P      &kp LEFT_BRACKET
+&kp TAB     &kp A  &kp S  &kp D  &kp F     &kp G                                                    &kp H     &kp J      &kp K      &kp L    &kp SEMI   &kp SQT
 &kp LCTRL   &kp Z  &kp X  &kp C  &kp V     &kp B      &kp PRINTSCREEN                  &caps_word   &kp N     &kp M      &kp COMMA  &kp DOT  &kp SLASH  &kp DELETE
                                  &kp LGUI  &kp LSHFT  &lt 4 BACKSPACE  &mo 5    &mo 6  &lt 3 SPACE  &kp LALT  &kp LCTRL
             >;
