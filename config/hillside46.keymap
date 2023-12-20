@@ -46,6 +46,16 @@
             bindings = <&kp LEFT_SHIFT>;
             key-positions = <43 19>;
         };
+
+        sapexecute {
+            bindings = <&kp F8>;
+            key-positions = <43 23>;
+        };
+
+        sapbak {
+            bindings = <&kp F3>;
+            key-positions = <43 22>;
+        };
     };
 
     macros {
