@@ -16,6 +16,7 @@
 #define NAV_L    3
 #define SYM_L    4
 #define ADJ_L    5
+#define SWE_L    6
 #define Undo   LC(Z)
 #define Cut    LC(X)
 #define Copy   LC(C)
@@ -172,5 +173,24 @@
                                  &trans   &trans   &trans  &trans    &trans  &trans  &trans     &trans
             >;
         };
+swedish_layer {
+            /* SWE
+ * -------------------------------------------------------------------------------------------------------------------------------------
+ * | `     |   Q   |   W   |   E   |   R   |   T   |-----------------------------------|   Y   |   U   |   I   |   O   |   P   | BKSPC |
+ * | TAB   |   A   |   S   |   D   |   F   |   G   |-----------------------------------|   H   |   J   |   K   |   L   |   ;   | ENTER |
+ * | CTRL  |   Z   |   X   |   C   |   V   |   B   |  ESC  |-------------------|  CAPS |   N   |   M   |   ,   |   .   |   /   |   '   |
+ *                                 |  GUI  |  ALT  |SK SHFT|  Nav  |---|  Sym  | SPACE |  ALT  |  GUI  |
+ */
+
+            bindings = <
+&kp ESCAPE  &kp Q  &kp W  &kp E  &kp R     &kp T                                                    &kp Y     &kp U      &kp I      &kp O    &kp P      &kp BACKSPACE
+&kp TAB     &kp A  &kp S  &kp D  &kp F     &kp G                                                    &kp H     &kp J      &kp K      &kp L    &kp SEMI   &kp ENTER
+&kp LCTRL   &kp Z  &kp X  &kp C  &kp V     &kp B      &kp PRINTSCREEN                  &caps_word   &kp N     &kp M      &kp COMMA  &kp DOT  &kp SLASH  &kp DELETE
+                                 &kp LGUI  &kp LSHFT  &lt 4 BACKSPACE  &mo 5    &mo 6  &lt 3 SPACE  &kp LALT  &kp LCTRL
+            >;
+        };
+
+
+
     };
 };
