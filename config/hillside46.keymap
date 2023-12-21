@@ -56,6 +56,16 @@
             bindings = <&kp F3>;
             key-positions = <43 22>;
         };
+
+        PekEnter {
+            bindings = <&kp ENTER>;
+            key-positions = <19 20>;
+        };
+
+        RingBackspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <22 21>;
+        };
     };
 
     macros {
