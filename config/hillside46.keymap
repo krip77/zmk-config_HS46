@@ -43,7 +43,7 @@
         };
 
         LEFTSHIFT {
-            bindings = <&kp LEFT_SHIFT>;
+            bindings = <&kp BACKSPACE>;
             key-positions = <43 19>;
         };
 
