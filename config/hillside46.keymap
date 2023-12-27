@@ -70,8 +70,12 @@
         };
     };
 
-&mt {
-    tapping-term-ms = <150>;
+behaviors {
+        &mt {
+            tapping-term-ms = <150>;
+        };
+
+        // ... other behaviors here ...
     };
 
     macros {
