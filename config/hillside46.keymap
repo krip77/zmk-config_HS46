@@ -80,6 +80,12 @@
         };
     };
 
+    &mt {
+        tapping-term-ms = <150>;
+    };
+
+
+
     keymap {
         compatible = "zmk,keymap";
 
