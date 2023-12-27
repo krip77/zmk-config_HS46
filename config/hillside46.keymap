@@ -70,6 +70,10 @@
         };
     };
 
+&mt {
+    tapping-term-ms = <150>;
+    };
+
     macros {
         copy: copy {
             compatible = "zmk,behavior-macro";
@@ -79,12 +83,6 @@
             label = "COPY";
         };
     };
-
-    &mt {
-        tapping-term-ms = <150>;
-    };
-
-
 
     keymap {
         compatible = "zmk,keymap";
