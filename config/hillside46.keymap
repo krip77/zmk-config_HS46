@@ -70,11 +70,12 @@
         };
     };
 
-behaviors {
+    behaviors {
         &mt {
             tapping-term-ms = <150>;
         };
-
+                // ... other behaviors here ...
+    };
 
     macros {
         copy: copy {
