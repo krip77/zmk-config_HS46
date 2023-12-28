@@ -79,6 +79,7 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+    };
 
     macros {
         copy: copy {
