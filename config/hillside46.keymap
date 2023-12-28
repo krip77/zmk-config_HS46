@@ -5,12 +5,11 @@
  */
 
 #include <behaviors.dtsi>
+#include "keymap_KP_swe.h"
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
-#include "keymap_KP_swe.h"
-
 
 #define QWERTY_L 0
 #define DVORAK_L 1
@@ -35,7 +34,7 @@
         };
 
         backspace {
-            bindings = <&kp BACKSPACE>;
+            bindings = <&kp LC(BACKSPACE)>;
             key-positions = <13 22>;
         };
 
@@ -70,16 +69,7 @@
         };
     };
 
-        behaviors {
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
+    behaviors {
     };
 
     macros {
@@ -105,10 +95,10 @@
  */
 
             bindings = <
-&kp ESCAPE  &kp Q  &kp W  &kp E  &kp R             &kp T                                                        &kp Y     &kp U             &kp I               &kp O    &kp P      &kp BACKSPACE
-&kp TAB     &kp A  &kp S  &kp D  &mt LEFT_SHIFT F  &kp G                                                        &kp H     &mt LEFT_SHIFT J  &mt LEFT_CONTROL K  &kp L    &kp SEMI   &kp ENTER
-&kp LCTRL   &kp Z  &kp X  &kp C  &kp V             &kp B      &caps_word                       &kp PRINTSCREEN  &kp N     &kp M             &kp COMMA           &kp DOT  &kp SLASH  &kp DELETE
-                                 &kp LGUI          &kp LSHFT  &lt 4 BACKSPACE  &mo 5    &mo 6  &lt 3 SPACE      &kp LALT  &kp LEFT_SHIFT
+&kp ESCAPE  &kp Q  &kp W  &kp E  &kp R             &kp T                                                         &kp Y     &kp U             &kp I               &kp O    &kp P      &kp BACKSPACE
+&kp TAB     &kp A  &kp S  &kp D  &mt LEFT_SHIFT F  &kp G                                                         &kp H     &mt LEFT_SHIFT J  &mt LEFT_CONTROL K  &kp L    &kp SEMI   &kp ENTER
+&kp LCTRL   &kp Z  &kp X  &kp C  &kp V             &kp B      &caps_word                        &kp PRINTSCREEN  &kp N     &kp M             &kp COMMA           &kp DOT  &kp SLASH  &kp DELETE
+                                 &kp LGUI          &kp LSHFT  &lt 4 BACKSPACE  &mo 5    &tog 6  &lt 3 SPACE      &kp LALT  &kp LEFT_SHIFT
             >;
         };
 
@@ -183,8 +173,6 @@
 &trans    &kp F1    &kp F2    &kp F3     &kp F4     &kp F5    &kp Undo                       &kp Redo  &kp END        &kp PAGE_UP  &kp DOWN  &kp PG_DN        &kp F10      &kp RCTRL
                                          &trans     &trans    &trans    &trans    &mo ADJ_L  &trans    &kp LC(C)      &kp LC(V)
             >;
-
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         sym_layer {
@@ -202,8 +190,6 @@
 &trans        &kp RA(N7)        &kp UNDER         &kp PLUS          &kp RA(N8)  &kp PIPE       &sk RALT                       &kp K_APP  &kp LS(SLASH)     &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PP    &kp C_PREV        &kp C_NEXT
                                                                     &trans      &trans         &trans    &mo ADJ_L    &trans  &trans     &kp C_PREV        &kp C_NEXT
             >;
-
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         adj_layer {
@@ -216,13 +202,11 @@
  */
 
             bindings = <
-&none       &to QWERTY_L  &to DVORAK_L  &to COLEMK_L  &none         &none                                               &none   &kp F11  &kp F12       &kp PRINTSCREEN  &ext_power EP_OFF  &ext_power EP_ON
-&sys_reset  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                        &none   &none    &none         &none            &none              &sys_reset
-&none       &kp LGUI      &kp LALT      &kp LCTRL     &kp LSHIFT    &none         &bt BT_CLR                    &none   &none   &none    &out OUT_USB  &out OUT_BLE     &none              &bootloader
-                                                      &trans        &trans        &trans      &trans    &trans  &trans  &trans  &trans
+&none        &to QWERTY_L  &to DVORAK_L  &to COLEMK_L  &none         &none                                               &none   &kp F11  &kp F12       &kp PRINTSCREEN  &ext_power EP_OFF  &ext_power EP_ON
+&sys_reset   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                        &none   &none    &none         &none            &none              &sys_reset
+&bootloader  &kp LGUI      &kp LALT      &kp LCTRL     &kp LSHIFT    &none         &bt BT_CLR                    &none   &none   &none    &out OUT_USB  &out OUT_BLE     &none              &bootloader
+                                                       &trans        &trans        &trans      &trans    &trans  &trans  &trans  &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         NumPad {
