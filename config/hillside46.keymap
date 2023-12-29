@@ -72,6 +72,11 @@
             bindings = <&kp BACKSLASH>;
             key-positions = <6 7>;
         };
+
+        skriv_aa {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <11 23>;
+        };
     };
 
     behaviors {
