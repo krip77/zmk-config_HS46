@@ -82,6 +82,21 @@
             bindings = <&kp LA(SPACE)>;
             key-positions = <8 9>;
         };
+
+        oo {
+            bindings = <&kp SEMI>;
+            key-positions = <8 20>;
+        };
+
+        aoo {
+            bindings = <&kp SQT>;
+            key-positions = <9 21>;
+        };
+
+        ao {
+            bindings = <&kp LBKT>;
+            key-positions = <10 22>;
+        };
     };
 
     behaviors {
@@ -89,7 +104,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
