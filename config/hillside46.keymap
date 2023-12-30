@@ -123,7 +123,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "KOMMA";
             #binding-cells = <0>;
-            bindings = <&kp K>, <&komma>;
+            bindings = <&kp K>, <&kommaspace>;
 
             tapping-term-ms = <300>;
         };
