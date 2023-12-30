@@ -109,6 +109,27 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+
+        ooo: ooo {
+            compatible = "zmk,behavior-tap-dance";
+            label = "OOO";
+            #binding-cells = <0>;
+            bindings = <&kp J>, <&kp SEMI>;
+        };
+
+        aoo: aoo {
+            compatible = "zmk,behavior-tap-dance";
+            label = "AOO";
+            #binding-cells = <0>;
+            bindings = <&kp K>, <&kp SQT>;
+        };
+
+        ao: ao {
+            compatible = "zmk,behavior-tap-dance";
+            label = "AO";
+            #binding-cells = <0>;
+            bindings = <&kp L>, <&kp LBKT>;
+        };
     };
 
     macros {
