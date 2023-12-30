@@ -85,17 +85,17 @@
 
         oo {
             bindings = <&kp SEMI>;
-            key-positions = <8 20>;
+            key-positions = <7 19>;
         };
 
         aoo {
             bindings = <&kp SQT>;
-            key-positions = <9 21>;
+            key-positions = <8 20>;
         };
 
         ao {
             bindings = <&kp LBKT>;
-            key-positions = <10 22>;
+            key-positions = <9 21>;
         };
     };
 
