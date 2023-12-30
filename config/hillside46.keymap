@@ -115,6 +115,8 @@
             label = "OOO";
             #binding-cells = <0>;
             bindings = <&kp J>, <&kp SEMI>;
+
+            tapping-term-ms = <200>;
         };
 
         aoo: aoo {
@@ -122,6 +124,8 @@
             label = "AOO";
             #binding-cells = <0>;
             bindings = <&kp K>, <&kp SQT>;
+
+            tapping-term-ms = <300>;
         };
 
         ao: ao {
@@ -129,6 +133,8 @@
             label = "AO";
             #binding-cells = <0>;
             bindings = <&kp L>, <&kp LBKT>;
+
+            tapping-term-ms = <100>;
         };
     };
 
