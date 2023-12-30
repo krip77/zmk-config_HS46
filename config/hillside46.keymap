@@ -116,7 +116,7 @@
             #binding-cells = <0>;
             bindings = <&kp J>, <&kp SEMI>;
 
-            tapping-term-ms = <200>;
+            tapping-term-ms = <350>;
         };
 
         aoo: aoo {
@@ -135,6 +135,15 @@
             bindings = <&kp L>, <&kp LBKT>;
 
             tapping-term-ms = <100>;
+        };
+
+        new_behavior: new_behavior {
+            compatible = "zmk,behavior-tap-dance";
+            label = "NEW_BEHAVIOR";
+            #binding-cells = <0>;
+            bindings = <&kp L>, <&kp LBKT>;
+
+            tapping-term-ms = <300>;
         };
     };
 
