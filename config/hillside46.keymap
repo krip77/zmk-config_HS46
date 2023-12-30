@@ -35,7 +35,7 @@
 
         backspace {
             bindings = <&kp LC(BACKSPACE)>;
-            key-positions = <13 22>;
+            key-positions = <20 15>;
         };
 
         swe {
@@ -175,9 +175,9 @@
  */
 
             bindings = <
-&kp ESCAPE  &kp Q  &kp W  &kp E  &kp R             &kp T                                                             &kp Y     &kp U           &kp I    &kp O     &kp P       &kp BACKSPACE
-&kp TAB     &kp A  &kp S  &kp D  &hm LEFT_SHIFT F  &kp G                                                             &kp H     &punkt          &komma   &kp L     &kp SEMI    &kp SQT
-&kp LCTRL   &kp Z  &kp X  &kp C  &kp V             &kp B      &caps_word                            &kp PRINTSCREEN  &kp N     &kp M           &kp SQT  &kp LBKT  &kp PERIOD  &kp DELETE
+&kp ESCAPE  &kp Q  &kp W  &kp E  &kp R             &kp T                                                             &kp Y     &kp U             &kp I               &kp O       &kp P       &kp LBKT
+&kp TAB     &kp A  &kp S  &kp D  &hm LEFT_SHIFT F  &kp G                                                             &kp H     &hm LEFT_SHIFT J  &hm LEFT_CONTROL K  &kp L       &kp SEMI    &kp SQT
+&kp LCTRL   &kp Z  &kp X  &kp C  &kp V             &kp B      &caps_word                            &kp PRINTSCREEN  &kp N     &kp M             &kp COMMA           &kp PERIOD  &kp PERIOD  &kp DELETE
                                  &kp LGUI          &kp LSHFT  &lt 4 LC(BACKSPACE)  &mo 5    &tog 6  &lt 3 SPACE      &kp LALT  &kp LEFT_SHIFT
             >;
         };
