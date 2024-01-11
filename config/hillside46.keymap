@@ -65,7 +65,7 @@
 
         RingBackspace {
             bindings = <&kp BACKSPACE>;
-            key-positions = <22 21>;
+            key-positions = <20 21>;
         };
 
         apostrof {
@@ -104,12 +104,12 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
 
-            require-prior-idle-ms = <125>;
+            require-prior-idle-ms = <100>;
         };
 
         punkt: punkt {
