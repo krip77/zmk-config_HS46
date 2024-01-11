@@ -177,9 +177,9 @@
  */
 
             bindings = <
-&kp ESCAPE  &kp Q  &kp W           &kp E        &kp R             &kp T                                                         &kp Y     &kp U             &kp I               &kp O       &kp P      &kp LBKT
-&kp TAB     &kp A  &hm LEFT_ALT S  &hm LSHFT D  &hm LEFT_SHIFT F  &kp G                                                         &kp H     &hm LEFT_SHIFT J  &hm LEFT_CONTROL K  &hm RALT L  &kp SEMI   &kp SQT
-&kp LSHIFT  &kp Z  &kp X           &kp C        &kp V             &kp B      &caps_word                        &kp PRINTSCREEN  &kp N     &kp M             &kp COMMA           &kp PERIOD  &kp SLASH  &kp DELETE
+&kp ESCAPE  &kp Q           &kp W  &kp E        &kp R             &kp T                                                         &kp Y     &kp U             &kp I               &kp O       &kp P      &kp LBKT
+&kp TAB     &hm LEFT_ALT A  &kp S  &hm LSHFT D  &hm LEFT_SHIFT F  &kp G                                                         &kp H     &hm LEFT_SHIFT J  &hm LEFT_CONTROL K  &hm RALT L  &kp SEMI   &kp SQT
+&kp LSHIFT  &kp Z           &kp X  &kp C        &kp V             &kp B      &caps_word                        &kp PRINTSCREEN  &kp N     &kp M             &kp COMMA           &kp PERIOD  &kp SLASH  &kp DELETE
                                                 &kp LGUI          &kp LSHFT  &lt 4 BACKSPACE  &mo 5    &tog 6  &lt 3 SPACE      &kp LALT  &kp LEFT_SHIFT
             >;
         };
