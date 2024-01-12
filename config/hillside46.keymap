@@ -64,7 +64,7 @@
         };
 
         RingBackspace {
-            bindings = <&kp BACKSPACE>;
+            bindings = <&kp LC(BACKSPACE)>;
             key-positions = <20 21>;
         };
 
