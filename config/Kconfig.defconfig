@@ -1,5 +1,5 @@
 config ZMK_KEYBOARD_NAME
-    default "alixw"
+    default "hillside46"
 
 if ZMK_DISPLAY
 
