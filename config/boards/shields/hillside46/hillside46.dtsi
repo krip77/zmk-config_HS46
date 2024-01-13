@@ -65,7 +65,8 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5) RC(3,5)                   RC(3,6
             compatible = "zmk,keymap-sensors";
             sensors = <&left_encoder &right_encoder>;
         };
-    &pro_micro_i2c {
+};
+&pro_micro_i2c {
 	status = "okay";
 
 	oled: ssd1306@3c {
@@ -82,6 +83,5 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5) RC(3,5)                   RC(3,6
 		com-invdir;
 		com-sequential;
 		prechargep = <0x22>;
-    };
     };
 };
