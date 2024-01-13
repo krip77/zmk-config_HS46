@@ -17,3 +17,16 @@ config ZMK_SPLIT
     default y
 
 endif
+
+# Add display configuration here
+config ZMK_DISPLAY
+    default y
+
+config LVGL_ENABLE
+    default y
+
+config LVGL_POINTER_KSCAN
+    default y
+
+config LVGL_POINTER_BUTTONS
+    default y
