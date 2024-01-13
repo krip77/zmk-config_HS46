@@ -16,35 +16,40 @@ if SHIELD_HILLSIDE46_LEFT || SHIELD_HILLSIDE46_RIGHT
 config ZMK_SPLIT
     default y
 
-endif
+if ZMK_DISPLAY
 
-# Add display configuration here
-config ZMK_DISPLAY
-    default y
+config I2C
+  default y
 
-config LVGL_ENABLE
-    default y
+config SSD1306
+  default y
 
-config LVGL_POINTER_KSCAN
-    default y
+config SSD1306_REVERSE_MODE
+  default y
 
-config LVGL_POINTER_BUTTONS
-    default y
+endif # ZMK_DISPLAY
 
-config LV_Z_VDB_SIZE
+if LVGL
 
-default 64
+config LVGL_HOR_RES_MAX
+  default 128
 
-config LV_Z_DPI
+config LVGL_VER_RES_MAX
+  default 32
 
-default 148
+config LVGL_VDB_SIZE
+  default 64
 
-config LV_Z_BITS_PER_PIXEL
+config LVGL_DPI
+  default 148
 
-default 1
+config LVGL_BITS_PER_PIXEL
+  default 1
 
-choice LV_COLOR_DEPTH
-
-default LV_COLOR_DEPTH_1
-
+choice LVGL_COLOR_DEPTH
+  default LVGL_COLOR_DEPTH_1
 endchoice
+
+endif # LVGL
+
+endif
