@@ -75,11 +75,4 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5) RC(3,5)                   RC(3,6
         // Define the I2C interface used by the display
         i2c-bus = <&i2c0>;
     };
-    // I2C interface configuration
-    i2c0: i2c@0 {
-        compatible = "i2c-gpio";
-        sda-pin = <17>; // Replace with your SDA pin number
-        scl-pin = <20>; // Replace with your SCL pin number
-        status = "okay";
-    };
 };
