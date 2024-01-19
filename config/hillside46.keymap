@@ -24,6 +24,8 @@
 #define Paste  LC(V)
 #define Redo   LC(Y)
 
+&lt { quick-tap-ms = <200>; };
+
 / {
     combos {
         compatible = "zmk,combos";
