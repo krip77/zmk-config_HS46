@@ -255,7 +255,7 @@
 &kp Copy  &kp N1    &kp N2    &kp N3     &kp N4     &kp N5                                                        &kp N6            &kp N7         &kp N8    &kp N9           &kp N0   &kp N0
 &kp Cut   &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp EXCL                                                      &kp LS(MINUS)     &kp LEFT       &kp UP    &kp RIGHT_ARROW  &trans   &kp SQT
 &trans    &kp F1    &kp F2    &kp F3     &kp F4     &kp F5     &kp Undo                              &kp Redo     &kp END           &kp PAGE_UP    &kp DOWN  &kp PG_DN        &kp F10  &kp RCTRL
-                                         &kp LGUI   &kp LSHFT  &lt 4 BACKSPACE  &trans    &mo ADJ_L  &lt 3 SPACE  &kp LEFT_CONTROL  &kp RIGHT_ALT
+                                         &kp LGUI   &kp LSHFT  &lt 4 BACKSPACE  &trans    &mo ADJ_L  &lt 3 SPACE  &kp LC(C)      &kp LC(V)
             >;
         };
 
