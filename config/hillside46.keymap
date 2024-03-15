@@ -220,7 +220,6 @@
                                          &kp LGUI  &kp LALT  &sk LSHIFT  &mo NAV_L    &mo SYM_L  &kp SPACE   &kp LALT  &kp RGUI
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         colemak_layer {
@@ -239,7 +238,6 @@
                                 &kp LGUI  &kp LALT  &sk LSHIFT  &mo NAV_L    &mo SYM_L  &kp SPACE   &kp LALT  &kp RGUI
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         nav_layer {
