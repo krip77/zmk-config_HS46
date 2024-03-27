@@ -164,6 +164,78 @@
 
             tapping-term-ms = <350>;
         };
+        TD2_2F2: TD2_2F2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD2_2F2";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_2>, <&kp F2>;
+
+            tapping-term-ms = <350>;
+        };
+        TD2_3F3: TD2_3F3{
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD2_3F3";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_3>, <&kp F3>;
+
+            tapping-term-ms = <350>;
+        };
+        TD2_4F4: TD2_4F4 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD2_4F4";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_4>, <&kp F4>;
+
+            tapping-term-ms = <350>;
+        };
+        TD2_5F5: TD2_5F5 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD2_5F5";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_5>, <&kp F5>;
+
+            tapping-term-ms = <350>;
+        };
+        TD2_6F6: TD2_6F6 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD2_6F6";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_6>, <&kp F6>;
+
+            tapping-term-ms = <350>;
+        };
+        TD2_7F7: TD2_7F7 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD2_7F7";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_7>, <&kp F7>;
+
+            tapping-term-ms = <350>;
+        };
+        TD2_8F8: TD2_8F8 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD2_8F8";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_8>, <&kp F8>;
+
+            tapping-term-ms = <350>;
+        };
+        TD2_9F9: TD2_9F9 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD2_9F9";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_9>, <&kp F9>;
+
+            tapping-term-ms = <350>;
+        };
+        TD2_10F10: TD2_10F10 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD2_10F10";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_0>, <&kp F10>;
+
+            tapping-term-ms = <350>;
+        };
     };
 
     macros {
