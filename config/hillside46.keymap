@@ -143,6 +143,8 @@
             label = "TD2_PASTE";
             #binding-cells = <0>;
             bindings = <&kp U>, <&kp LC(V)>;
+
+            tapping-term-ms = <150>;
         };
 
         TD2_copy: TD2_copy {
@@ -150,6 +152,8 @@
             label = "TD2_COPY";
             #binding-cells = <0>;
             bindings = <&kp Y>, <&kp LC(C)>;
+
+            tapping-term-ms = <150>;
         };
 
         TD2_1F1: TD2_1F1 {
@@ -197,7 +201,7 @@
  */
 
             bindings = <
-&kp ESCAPE  &kp Q  &kp W  &kp E        &kp R             &kp T                                                         &TD2_copy         &TD2_copy         &kp I               &kp O       &kp P      &kp LBKT
+&kp ESCAPE  &kp Q  &kp W  &kp E        &kp R             &kp T                                                         &TD2_copy         &TD2_paste        &kp I               &kp O       &kp P      &kp LBKT
 &kp TAB     &kp A  &kp S  &hm LSHFT D  &hm LEFT_SHIFT F  &kp G                                                         &kp H             &hm LEFT_SHIFT J  &hm LEFT_CONTROL K  &hm RALT L  &kp SEMI   &kp SQT
 &kp LSHIFT  &kp Z  &kp X  &kp C        &kp V             &kp B      &caps_word                        &kp PRINTSCREEN  &kp N             &kp M             &kp COMMA           &kp PERIOD  &kp SLASH  &kp DELETE
                                        &kp LGUI          &kp LSHFT  &lt 2 BACKSPACE  &mo 3    &tog 4  &lt 1 SPACE      &kp LEFT_CONTROL  &kp RIGHT_ALT
