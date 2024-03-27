@@ -1,7 +1,6 @@
 /* Copyright (c) 2021-2022 The ZMK Contributors
  * SPDX-License-Identifier: MIT
  */
-
 #include <dt-bindings/led/led.h>
 
 &pinctrl {
@@ -39,3 +38,7 @@
 };
 
 / {
+	chosen {
+		zmk,underglow = &led_strip;
+	};
+};
