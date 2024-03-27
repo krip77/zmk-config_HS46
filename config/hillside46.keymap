@@ -144,7 +144,7 @@
             #binding-cells = <0>;
             bindings = <&kp U>, <&kp LC(V)>;
 
-            tapping-term-ms = <150>;
+            tapping-term-ms = <350>;
         };
 
         TD2_copy: TD2_copy {
@@ -153,7 +153,7 @@
             #binding-cells = <0>;
             bindings = <&kp Y>, <&kp LC(C)>;
 
-            tapping-term-ms = <150>;
+            tapping-term-ms = <350>;
         };
 
         TD2_1F1: TD2_1F1 {
@@ -161,6 +161,8 @@
             label = "TD2_1F1";
             #binding-cells = <0>;
             bindings = <&kp NUMBER_1>, <&kp F1>;
+
+            tapping-term-ms = <350>;
         };
     };
 
