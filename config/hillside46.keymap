@@ -142,7 +142,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD2_PASTE";
             #binding-cells = <0>;
-            bindings = <&kp U>, <&kp A>;
+            bindings = <&kp U>, <&kp LC(V)>;
 
             tapping-term-ms = <350>;
         };
