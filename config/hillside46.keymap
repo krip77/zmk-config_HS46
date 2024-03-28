@@ -319,7 +319,7 @@
  */
 
             bindings = <
-&kp Copy  &TD2_1F1  &TD2_2F2  &TD2_3F3   &kp N4     &kp N5                                                    &kp N6            &kp N7         &kp N8    &kp N9           &kp N0   &kp N0
+&kp Copy  &TD2_1F1  &TD2_2F2  &TD2_3F3   &TD2_4F4   &TD2_5F5                                                  &TD2_6F6          &TD2_7F7       &TD2_8F8  &TD2_9F9  &TD2_10F10   &kp N0
 &kp Cut   &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp EXCL                                                  &kp LS(MINUS)     &kp LEFT       &kp UP    &kp RIGHT_ARROW  &trans   &kp SQT
 &trans    &kp F1    &kp F2    &kp F3     &kp F4     &kp F5     &kp Undo                          &kp Redo     &kp END           &kp PAGE_UP    &kp DOWN  &kp PG_DN        &kp F10  &kp RCTRL
                                          &kp LGUI   &kp LSHFT  &lt 2 BACKSPACE  &trans    &mo 3  &lt 1 SPACE  &kp LEFT_CONTROL  &kp RIGHT_ALT
