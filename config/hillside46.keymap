@@ -162,7 +162,7 @@
             #binding-cells = <0>;
             bindings = <&kp NUMBER_1>, <&kp F1>;
 
-            tapping-term-ms = <250>;
+            tapping-term-ms = <200>;
         };
 
         TD2_2F2: TD2_2F2 {
@@ -171,7 +171,7 @@
             #binding-cells = <0>;
             bindings = <&kp NUMBER_2>, <&kp F2>;
 
-            tapping-term-ms = <250>;
+            tapping-term-ms = <200>;
         };
 
         TD2_3F3: TD2_3F3 {
@@ -180,7 +180,7 @@
             #binding-cells = <0>;
             bindings = <&kp NUMBER_3>, <&kp F3>;
 
-            tapping-term-ms = <250>;
+            tapping-term-ms = <200>;
         };
 
         TD2_4F4: TD2_4F4 {
@@ -189,7 +189,7 @@
             #binding-cells = <0>;
             bindings = <&kp NUMBER_4>, <&kp F4>;
 
-            tapping-term-ms = <250>;
+            tapping-term-ms = <200>;
         };
 
         TD2_5F5: TD2_5F5 {
@@ -198,7 +198,7 @@
             #binding-cells = <0>;
             bindings = <&kp NUMBER_5>, <&kp F5>;
 
-            tapping-term-ms = <250>;
+            tapping-term-ms = <200>;
         };
 
         TD2_6F6: TD2_6F6 {
@@ -207,7 +207,7 @@
             #binding-cells = <0>;
             bindings = <&kp NUMBER_6>, <&kp F6>;
 
-            tapping-term-ms = <250>;
+            tapping-term-ms = <200>;
         };
 
         TD2_7F7: TD2_7F7 {
@@ -216,7 +216,7 @@
             #binding-cells = <0>;
             bindings = <&kp NUMBER_7>, <&kp F7>;
 
-            tapping-term-ms = <250>;
+            tapping-term-ms = <200>;
         };
 
         TD2_8F8: TD2_8F8 {
@@ -225,7 +225,7 @@
             #binding-cells = <0>;
             bindings = <&kp NUMBER_8>, <&kp F8>;
 
-            tapping-term-ms = <250>;
+            tapping-term-ms = <200>;
         };
 
         TD2_9F9: TD2_9F9 {
@@ -234,7 +234,7 @@
             #binding-cells = <0>;
             bindings = <&kp NUMBER_9>, <&kp F9>;
 
-            tapping-term-ms = <250>;
+            tapping-term-ms = <200>;
         };
 
         TD2_10F10: TD2_10F10 {
@@ -242,6 +242,15 @@
             label = "TD2_10F10";
             #binding-cells = <0>;
             bindings = <&kp NUMBER_0>, <&kp F10>;
+
+            tapping-term-ms = <200>;
+        };
+
+        undo: undo {
+            compatible = "zmk,behavior-tap-dance";
+            label = "UNDO";
+            #binding-cells = <0>;
+            bindings = <&kp I>, <&kp LC(Y)>;
 
             tapping-term-ms = <250>;
         };
@@ -284,7 +293,7 @@
  */
 
             bindings = <
-&kp ESCAPE  &kp Q  &kp W  &kp E        &kp R             &kp T                                                         &TD2_copy         &TD2_paste        &kp I               &kp O       &kp P      &kp LBKT
+&kp ESCAPE  &kp Q  &kp W  &kp E        &kp R             &kp T                                                         &TD2_copy         &TD2_paste        &undo               &kp O       &kp P      &kp LBKT
 &kp TAB     &kp A  &kp S  &hm LSHFT D  &hm LEFT_SHIFT F  &kp G                                                         &kp H             &hm LEFT_SHIFT J  &hm LEFT_CONTROL K  &hm RALT L  &kp SEMI   &kp SQT
 &kp LSHIFT  &kp Z  &kp X  &kp C        &kp V             &kp B      &caps_word                        &kp PRINTSCREEN  &kp N             &kp M             &kp COMMA           &kp PERIOD  &kp SLASH  &kp DELETE
                                        &kp LGUI          &kp LSHFT  &lt 2 BACKSPACE  &mo 3    &tog 4  &lt 1 SPACE      &kp LEFT_CONTROL  &kp RIGHT_ALT
@@ -319,9 +328,9 @@
  */
 
             bindings = <
-&kp Copy  &TD2_1F1  &TD2_2F2  &TD2_3F3   &TD2_4F4   &TD2_5F5                                                  &TD2_6F6          &TD2_7F7       &TD2_8F8  &TD2_9F9  &TD2_10F10   &kp N0
-&kp Cut   &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp EXCL                                                  &kp LS(MINUS)     &kp LEFT       &kp UP    &kp RIGHT_ARROW  &trans   &kp SQT
-&trans    &kp F1    &kp F2    &kp F3     &kp F4     &kp F5     &kp Undo                          &kp Redo     &kp END           &kp PAGE_UP    &kp DOWN  &kp PG_DN        &kp F10  &kp RCTRL
+&kp Copy  &TD2_1F1  &TD2_2F2  &TD2_3F3   &TD2_4F4   &TD2_5F5                                                  &TD2_6F6          &TD2_7F7       &TD2_8F8  &TD2_9F9         &TD2_10F10  &kp N0
+&kp Cut   &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp EXCL                                                  &kp LS(MINUS)     &kp LEFT       &kp UP    &kp RIGHT_ARROW  &trans      &kp SQT
+&trans    &kp F1    &kp F2    &kp F3     &kp F4     &kp F5     &kp Undo                          &kp Redo     &kp END           &kp PAGE_UP    &kp DOWN  &kp PG_DN        &kp F10     &kp RCTRL
                                          &kp LGUI   &kp LSHFT  &lt 2 BACKSPACE  &trans    &mo 3  &lt 1 SPACE  &kp LEFT_CONTROL  &kp RIGHT_ALT
             >;
         };
