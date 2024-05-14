@@ -250,7 +250,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "UNDO";
             #binding-cells = <0>;
-            bindings = <&kp I>, <&kp LC(Y)>;
+            bindings = <&kp I>, <&kp LC(Z)>;
 
             tapping-term-ms = <250>;
         };
