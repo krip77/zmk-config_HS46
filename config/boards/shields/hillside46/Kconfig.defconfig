@@ -12,6 +12,12 @@ config ZMK_SPLIT_BLE_ROLE_CENTRAL
 CONFIG_PINCTRL=y
 endif
 
+#Lagt till detta för att dispaylen skall funka 2024-10-22
+CONFIG_DISPLAY=y
+CONFIG_SSD1306=y
+
+
+
 if SHIELD_HILLSIDE46_LEFT || SHIELD_HILLSIDE46_RIGHT
 
 config ZMK_SPLIT
