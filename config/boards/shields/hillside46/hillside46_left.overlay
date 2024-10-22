@@ -4,27 +4,41 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "hillside46.dtsi" 
+#include "hillside46.dtsi"
 
+// Tangentbordskonfiguration för kscan
 &kscan0 {
-    col-gpios
-        = <&pro_micro 19 GPIO_ACTIVE_HIGH> // col0 in the schematic
-        , <&pro_micro 18 GPIO_ACTIVE_HIGH> // col1 in the schematic
-        , <&pro_micro 15 GPIO_ACTIVE_HIGH> // col2 in the schematic
-        , <&pro_micro 14 GPIO_ACTIVE_HIGH> // col3 in the schematic
-        , <&pro_micro 16 GPIO_ACTIVE_HIGH> // col4 in the schematic
-        , <&pro_micro 10 GPIO_ACTIVE_HIGH> // col5 in the schematic
-        ;
+    col-gpios = <&pro_micro 19 GPIO_ACTIVE_HIGH> // col0 in the schematic
+               , <&pro_micro 18 GPIO_ACTIVE_HIGH> // col1 in the schematic
+               , <&pro_micro 15 GPIO_ACTIVE_HIGH> // col2 in the schematic
+               , <&pro_micro 14 GPIO_ACTIVE_HIGH> // col3 in the schematic
+               , <&pro_micro 16 GPIO_ACTIVE_HIGH> // col4 in the schematic
+               , <&pro_micro 10 GPIO_ACTIVE_HIGH> // col5 in the schematic
+               ;
 };
 
+// Konfiguration för din vänstra encoder
 &left_encoder {
     status = "okay";
 };
 
+// Pincntl-inställningar för I²C (lägg till dessa ovanför I²C-inställningarna)
+&pinctrl {
+    i2c1_sda_pin: i2c1_sda_pin {
+        pinmux = <NRF_P0 30 (PINMUX_FUNC_D)>;  // P0.30 för SDA
+    };
+
+    i2c1_scl_pin: i2c1_scl_pin {
+        pinmux = <NRF_P0 31 (PINMUX_FUNC_D)>;  // P0.31 för SCL
+    };
+};
+
+// I²C och OLED-konfiguration
 &i2c1 {
     status = "okay";
     pinctrl-0 = <&i2c1_sda_pin &i2c1_scl_pin>;
     pinctrl-names = "default";
+    
     ssd1306: ssd1306@3C {
         compatible = "ssd,ssd1306fb-i2c";
         reg = <0x3C>;  // I2C-adressen för OLED-displayen
