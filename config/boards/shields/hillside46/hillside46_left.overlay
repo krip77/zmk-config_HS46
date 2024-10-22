@@ -20,3 +20,14 @@
 &left_encoder {
     status = "okay";
 };
+
+&i2c1 {
+    status = "okay";
+    ssd1306: ssd1306@3C {
+        compatible = "ssd,ssd1306fb-i2c";
+        reg = <0x3C>;  // I2C-adressen för OLED-displayen
+        width = <128>;
+        height = <32>;
+        label = "SSD1306";
+    };
+};
