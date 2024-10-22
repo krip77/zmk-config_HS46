@@ -2,11 +2,15 @@ config SHIELD_ALIXW
     def_bool $(shields_list_contains,hillside46)
 
 #Tillagt för att få skärmen att funka 2024-10-22
+/ {
+    zephyr,display = &ssd1306;
+};
+
 &i2c1 {
     status = "okay";
     ssd1306: ssd1306@3C {
         compatible = "ssd,ssd1306fb-i2c";
-        reg = <0x3C>;  // I2C address of the display
+        reg = <0x3C>;  // The I2C address of the display
         width = <128>;
         height = <32>;
         label = "SSD1306";
