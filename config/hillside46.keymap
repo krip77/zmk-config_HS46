@@ -96,6 +96,21 @@
             bindings = <&kp LBKT>;
             key-positions = <9 21>;
         };
+
+        LikaMed {
+            bindings = <&kp LS(N0)>;
+            key-positions = <7 8>;
+        };
+
+        minus {
+            bindings = <&kp SLASH>;
+            key-positions = <18 19>;
+        };
+
+        plus {
+            bindings = <&kp MINUS>;
+            key-positions = <33 32>;
+        };
     };
 
     behaviors {
