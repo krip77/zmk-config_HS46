@@ -12,6 +12,9 @@
         zmk,matrix_transform = &default_transform;
     };
 
+#Lagt till denna kod för att displayen skall funka 2024-10-22
+    zephyr,display = &ssd1306;  
+
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <12>;
