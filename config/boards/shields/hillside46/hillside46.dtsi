@@ -10,7 +10,7 @@
     // Först definierar vi OLED-displayen (ssd1306@3C)
     ssd1306: ssd1306@3C {
         compatible = "ssd,ssd1306fb-i2c";
-        reg = <0x3C>;  // I²C-adressen för OLED-displayen
+        reg = <0x3C 0x0>;  // Adressen för OLED-displayen och storlek
         width = <128>;
         height = <32>;
         label = "SSD1306";
