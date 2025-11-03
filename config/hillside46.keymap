@@ -308,10 +308,10 @@
  */
 
             bindings = <
-&kp ESCAPE    &kp Q  &kp W  &kp E        &kp R             &kp T                                                         &TD2_copy         &TD2_paste        &undo               &kp O       &kp P      &kp LBKT
-&kp TAB       &kp A  &kp S  &hm LSHFT D  &hm LEFT_SHIFT F  &kp G                                                         &kp H             &hm LEFT_SHIFT J  &hm LEFT_CONTROL K  &hm RALT L  &kp SEMI   &kp SQT
-&kp LEFT_ALT  &kp Z  &kp X  &kp C        &kp V             &kp B      &kp CAPSLOCK                      &kp PRINTSCREEN  &kp N             &kp M             &kp COMMA           &kp PERIOD  &kp SLASH  &kp DELETE
-                                         &kp LGUI          &kp LSHFT  &lt 2 BACKSPACE  &mo 3    &tog 4  &lt 1 SPACE      &kp LEFT_CONTROL  &kp RIGHT_ALT
+&kp ESCAPE    &kp Q  &kp W  &kp E        &kp R             &kp T                                                                  &TD2_copy         &TD2_paste        &undo               &kp O       &kp P      &kp LBKT
+&kp TAB       &kp A  &kp S  &hm LSHFT D  &hm LEFT_SHIFT F  &kp G                                                                  &kp H             &hm LEFT_SHIFT J  &hm LEFT_CONTROL K  &hm RALT L  &kp SEMI   &kp SQT
+&kp LEFT_ALT  &kp Z  &kp X  &kp C        &kp V             &kp B      &kp CAPSLOCK                               &kp PRINTSCREEN  &kp N             &kp M             &kp COMMA           &kp PERIOD  &kp SLASH  &kp DELETE
+                                         &kp LGUI          &kp LSHFT  &lt 2 BACKSPACE  &mo 3    &lt 4 RS(RG(P))  &lt 1 SPACE      &kp LEFT_CONTROL  &kp RIGHT_ALT
             >;
         };
 
