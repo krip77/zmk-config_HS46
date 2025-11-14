@@ -22,9 +22,21 @@
     status = "okay";
 };
 
+// I²C pinctrl configuration
+&pinctrl {
+    i2c1_default: i2c1_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 30)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 31)>;
+        };
+    };
+};
+
 // I²C och OLED-konfiguration
 &i2c1 {
     status = "okay";
+    pinctrl-0 = <&i2c1_default>;
+    pinctrl-names = "default";
     
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
