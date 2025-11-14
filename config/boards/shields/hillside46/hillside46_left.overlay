@@ -22,22 +22,9 @@
     status = "okay";
 };
 
-// Pincntl-inställningar för I²C (lägg till dessa ovanför I²C-inställningarna)
-&pinctrl {
-    i2c1_sda_pin: i2c1_sda_pin {
-        pinmux = <NRF_P0 30 (PINMUX_FUNC_D)>;  // P0.30 för SDA
-    };
-
-    i2c1_scl_pin: i2c1_scl_pin {
-        pinmux = <NRF_P0 31 (PINMUX_FUNC_D)>;  // P0.31 för SCL
-    };
-};
-
 // I²C och OLED-konfiguration
 &i2c1 {
     status = "okay";
-    pinctrl-0 = <&i2c1_sda_pin &i2c1_scl_pin>;
-    pinctrl-names = "default";
     
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
