@@ -39,11 +39,24 @@
     pinctrl-0 = <&i2c1_sda_pin &i2c1_scl_pin>;
     pinctrl-names = "default";
     
-    ssd1306: ssd1306@3C {
-        compatible = "ssd,ssd1306fb-i2c";
-        reg = <0x3C>;  // I2C-adressen för OLED-displayen
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        label = "SSD1306";
         width = <128>;
         height = <32>;
-        label = "SSD1306";
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <31>;
+        segment-remap;
+        com-invdir;
+        prechargep = <0x22>;
+    };
+};
+
+/ {
+    chosen {
+        zephyr,display = &oled;
     };
 };
