@@ -51,3 +51,9 @@ While RGB is disabled, any RGB control keys
 The Hillside shield definition files should *not* need to be modified and are in ./config/boards/shields.
 
 More information about each keymap is in their readme files.
+
+## Documentation
+
+- **[REPOSITORY_STRUCTURE.md](REPOSITORY_STRUCTURE.md)** - Comprehensive guide explaining all files in the repository, their purposes, and how they relate to each other
+- **[FLASHING_GUIDE.md](FLASHING_GUIDE.md)** - Step-by-step guide for flashing firmware to your keyboard
+- **[DISPLAY_CONFIG.md](config/boards/shields/hillside46/DISPLAY_CONFIG.md)** - Detailed display configuration and troubleshooting (Hillside 46)
