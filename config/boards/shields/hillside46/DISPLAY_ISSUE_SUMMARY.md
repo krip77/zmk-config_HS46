@@ -9,7 +9,11 @@ Based on your git history:
 
 ## Root Cause Analysis
 
-### Most Likely Issue: ZMK Known Bug #674
+### Possible Issues
+
+Based on your timeline (stopped working after ZMK update in late 2023/early 2024), there could be several causes:
+
+#### Issue #1: ZMK Known Bug #674 (External Power Re-init)
 
 **ZMK GitHub Issue**: [#674 - OLED Re-init on ext_pwr on](https://github.com/zmkfirmware/zmk/issues/674)
 
@@ -19,12 +23,27 @@ Based on your git history:
 - Display **does not re-initialize** when power is restored
 - This is a **known bug in ZMK** - display support is still "proof of concept"
 
-**Why This Matches Your Situation**:
-1. ✅ Display worked before ZMK update
-2. ✅ Stopped working after ZMK update (late 2023/early 2024)
-3. ✅ Keyboard itself works fine (only display affected)
-4. ✅ Configuration appears correct (compatible string, pins, etc.)
-5. ✅ You have external power controls in keymap (EP_OFF/EP_ON)
+#### Issue #2: ZMK Display Driver/Configuration Change
+
+**Possible Causes**:
+- ZMK may have changed how displays are initialized
+- Display driver may have been updated/changed
+- Zephyr version update may have affected display drivers
+- Configuration requirements may have changed
+
+**Evidence**:
+- Display stopped working after a ZMK update (not just sleep-related)
+- Configuration appears correct but display still doesn't work
+- This suggests a driver or initialization change, not just a re-init bug
+
+#### Issue #3: Pinctrl API Change
+
+**The Change**:
+- Old working config used: `pinmux = <NRF_P0 30 (PINMUX_FUNC_D)>;`
+- Current config uses: `NRF_PSEL(TWIM_SDA, 0, 30)`
+- This suggests a Zephyr pinctrl API change occurred
+
+**Impact**: The pinctrl syntax change was required for newer Zephyr versions, but may have affected display initialization timing or behavior.
 
 ## The Solution: External Power Toggle
 
@@ -128,17 +147,26 @@ This is a **known ZMK bug** that hasn't been fixed yet. Options:
    ```
 3. **Wait for ZMK fix** - Monitor [Issue #674](https://github.com/zmkfirmware/zmk/issues/674)
 
+## Additional Investigation Needed
+
+Since you mentioned this might be "another change" (not just the known bug), we should investigate:
+
+1. **Check ZMK version/changelog** around late 2023/early 2024 for display-related changes
+2. **Check Zephyr version** - Your `west.yml` pulls from ZMK main, which may have updated Zephyr versions
+3. **Display initialization order** - May have changed, affecting when display initializes
+4. **Driver compatibility** - The `"ssd,ssd1306fb-i2c"` compatible string may have been affected by driver updates
+
 ## Summary
 
-- ✅ Your configuration is **correct**
+- ✅ Your configuration is **correct** (matches last working version)
 - ✅ Hardware is likely **fine** (keyboard works)
-- ✅ This is a **known ZMK bug** (Issue #674)
-- ✅ **With batteries**: Display blanks on sleep, doesn't re-init on wake
-- ✅ **Solution options**:
-  - Power cycle (turn off/on) if battery-only
-  - External power toggle (EP_OFF/EP_ON) if USB connected
-  - Disable sleep (drains battery faster)
-- ✅ **Convenience**: Consider adding EP_TOG key for easier toggling (if using USB)
+- ⚠️ **This may be a different ZMK change** (not just Issue #674)
+- ✅ **With batteries**: Display behavior may differ from USB-only setups
+- ✅ **Next steps**:
+  - Test if display works on fresh boot (confirms hardware OK)
+  - Check ZMK/Zephyr changelogs for display driver changes
+  - Try power cycling to see if display initializes
+  - Consider checking ZMK Discord/GitHub for similar reports
 
-**For battery-powered keyboards**: The display will likely blank when the keyboard goes to sleep. Power cycling is the most reliable way to get it back. This is a known limitation of ZMK display support.
+**The fact that it stopped working after a ZMK update suggests a driver or initialization change, not just the re-init bug.**
 
