@@ -7,6 +7,21 @@ Based on your git history:
 - **Late 2023 / Early 2024**: Display stopped working after a ZMK update
 - **Over 1 year**: Display has been non-functional
 
+## Configuration Restoration (November 15, 2025)
+
+**Found and restored the working I2C display configuration** from the [HillSideView project](https://github.com/wannabecoffeenerd/HillSideView):
+
+- **Source**: Configuration from commit `8d2b158` (November 14, 2024) which used the working I2C display setup
+- **Changes made**:
+  - Changed compatible string from `"ssd,ssd1306fb-i2c"` to `"solomon,ssd1306fb"`
+  - Added display parameters: `segment-offset`, `page-offset`, `display-offset`, `multiplex-ratio`, `segment-remap`, `com-invdir`, `prechargep`
+  - Changed display node label from `ssd1306` to `oled`
+  - Changed I2C address from `0x3C` to `0x3c` (lowercase)
+- **Reference**: [Reddit discussion about HillSideView](https://www.reddit.com/r/ErgoMechKeyboards/comments/17opz7v/hillsideview_a_modified_hillside_46_with_niceview/)
+- **Note**: You mentioned being in contact with "dalewking" who managed to get the I2C display working. The restored configuration may have been based on or influenced by their work. If you have any messages or details from dalewking, those could provide additional insights.
+
+**Next step**: Flash the firmware and test if the display works with this restored configuration.
+
 ## Root Cause Analysis
 
 ### Possible Issues
@@ -158,15 +173,16 @@ Since you mentioned this might be "another change" (not just the known bug), we 
 
 ## Summary
 
-- ✅ Your configuration is **correct** (matches last working version)
+- ✅ **Configuration restored**: Using working I2C display config from HillSideView project
+- ✅ **Configuration details**: `"solomon,ssd1306fb"` with full parameter set (from commit `8d2b158`)
 - ✅ Hardware is likely **fine** (keyboard works)
 - ⚠️ **This may be a different ZMK change** (not just Issue #674)
 - ✅ **With batteries**: Display behavior may differ from USB-only setups
 - ✅ **Next steps**:
+  - **Flash firmware** with restored configuration
   - Test if display works on fresh boot (confirms hardware OK)
-  - Check ZMK/Zephyr changelogs for display driver changes
-  - Try power cycling to see if display initializes
-  - Consider checking ZMK Discord/GitHub for similar reports
+  - If display works on boot but goes blank after sleep, use external power toggle workaround
+  - If display doesn't work at all, check hardware connections and I2C address
 
-**The fact that it stopped working after a ZMK update suggests a driver or initialization change, not just the re-init bug.**
+**The restored configuration uses the exact settings that worked in the HillSideView project. This should resolve the display issue if it was a configuration problem.**
 

@@ -7,6 +7,10 @@ Based on git history:
 - **Late 2023 / Early 2024**: Display likely stopped working after a ZMK update
 - **Over 1 year**: Display has been non-functional since then
 
+## Community Contributions
+
+**dalewking**: You mentioned being in contact with "dalewking" who managed to get the I2C display working. The restored configuration may have been based on or influenced by their work. If you have any messages, emails, or forum posts from dalewking with configuration details, those could provide additional insights or alternative solutions.
+
 ## Known ZMK Display Issues
 
 ### Issue #1: Display Remains Blank After External Power Cutoff

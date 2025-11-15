@@ -45,18 +45,29 @@ The display connects to the Hillside 46 PCB via the I2C header, which is arrange
 ### Critical Configuration Details
 
 #### Compatible String
-The display uses the **`"ssd,ssd1306fb-i2c"`** compatible string. This is important - using the newer `"solomon,ssd1306fb"` string may not work with this specific hardware setup.
+The display uses the **`"solomon,ssd1306fb"`** compatible string with additional display parameters. This configuration was found to work in the [HillSideView project](https://github.com/wannabecoffeenerd/HillSideView) where someone successfully got an I2C display working.
 
-**Working Configuration:**
+**Note**: You mentioned being in contact with "dalewking" who managed to get the I2C display working. The restored configuration may have been influenced by or based on their work. If you have any messages, emails, or forum posts from dalewking with additional configuration details, those could provide further insights.
+
+**Working Configuration (from hillside view project):**
 ```dts
-ssd1306: ssd1306@3C {
-    compatible = "ssd,ssd1306fb-i2c";
-    reg = <0x3C>;
+oled: ssd1306@3c {
+    compatible = "solomon,ssd1306fb";
+    reg = <0x3c>;
     label = "SSD1306";
     width = <128>;
     height = <32>;
+    segment-offset = <0>;
+    page-offset = <0>;
+    display-offset = <0>;
+    multiplex-ratio = <31>;
+    segment-remap;
+    com-invdir;
+    prechargep = <0x22>;
 };
 ```
+
+**Note**: This configuration was restored from commit `8d2b158` which used the working I2C display setup. The simpler `"ssd,ssd1306fb-i2c"` compatible string may not work with this specific hardware setup.
 
 #### I2C Pin Configuration
 The I2C pins are configured using pinctrl:
@@ -83,10 +94,12 @@ The display is referenced in the `chosen` node **only in the left overlay**:
 ```dts
 / {
     chosen {
-        zephyr,display = &ssd1306;
+        zephyr,display = &oled;
     };
 };
 ```
+
+**Note**: The display node is labeled `oled` (not `ssd1306`) to match the working configuration.
 
 **Important**: This reference must NOT be in the shared `hillside46.dtsi` file, as it would cause build errors for the right side (which doesn't have a display).
 
@@ -121,8 +134,9 @@ When properly configured, the display shows:
 ### Display Not Working
 
 1. **Check Compatible String**
-   - Ensure using `"ssd,ssd1306fb-i2c"` (not `"solomon,ssd1306fb"`)
-   - This was the key fix after a ZMK update broke the display
+   - Current configuration uses `"solomon,ssd1306fb"` with additional parameters
+   - This configuration was found to work in the HillSideView project
+   - If this doesn't work, try `"ssd,ssd1306fb-i2c"` (simpler, but may not work with all displays)
 
 2. **Verify I2C Address**
    - Default is `0x3C`

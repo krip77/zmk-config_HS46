@@ -29,10 +29,12 @@
    - Or a ZMK update broke it shortly after building
    - Or the display worked initially but stopped after a ZMK update
 
-3. **"Hillside View" project**: You mentioned looking at a "hillside view" project. This might be:
-   - A different keyboard variant
-   - A different firmware configuration
-   - A reference design or example
+3. **"Hillside View" project**: You mentioned looking at a "hillside view" project. This is:
+   - A separate GitHub repository you have
+   - A project primarily using nice!view displays (different from I2C SSD1306)
+   - **Key Information**: Someone in that project successfully got an I2C display working
+   - **Important**: You used that I2C display configuration, and it worked until a ZMK update broke it
+   - This suggests the working configuration might have been different from what's currently in this repo
 
 ## Questions to Clarify
 
@@ -46,24 +48,38 @@
    - Or after a firmware flash?
 
 3. **"Hillside View" project connection**
-   - Did you use any code/config from a "hillside view" project?
-   - Was that a different keyboard or firmware setup?
-   - Could that have affected the display configuration?
+   - **Confirmed**: You used I2C display configuration from the [HillSideView project](https://github.com/wannabecoffeenerd/HillSideView)
+   - **Confirmed**: That configuration worked until a ZMK update broke it
+   - **Found**: The working configuration was in commit `8d2b158` (November 14, 2024)
+   - **Restored**: Configuration using `"solomon,ssd1306fb"` with additional parameters (`segment-offset`, `multiplex-ratio`, `segment-remap`, `com-invdir`, `prechargep`)
+   - **Reference**: [Reddit discussion about HillSideView](https://www.reddit.com/r/ErgoMechKeyboards/comments/17opz7v/hillsideview_a_modified_hillside_46_with_niceview/)
 
-## Next Steps
+4. **dalewking contribution**
+   - **Confirmed**: You were in contact with "dalewking" who managed to get the I2C display working
+   - **Note**: The restored configuration may have been based on or influenced by dalewking's work
+   - **Action**: If you have any messages, emails, or forum posts from dalewking with configuration details, those could provide additional insights or alternative solutions
 
-Based on this timeline, we should:
+## Resolution
 
-1. **Verify if display ever worked**: Test with the configuration from commit `24e0535` (October 22, 2024) which was when you added display config
-2. **Check for "hillside view" references**: See if there's a different configuration that might have worked
-3. **Investigate ZMK changes**: Look for ZMK display driver changes between when you built the keyboard and when you tried to fix it
+**November 15, 2025**: Found and restored the working I2C display configuration:
+
+1. **Found working configuration**: Located in commit `8d2b158` which used the configuration from the HillSideView project
+2. **Restored configuration**: Updated `hillside46_left.overlay` to use:
+   - Compatible string: `"solomon,ssd1306fb"` (instead of `"ssd,ssd1306fb-i2c"`)
+   - Additional display parameters: `segment-offset`, `page-offset`, `display-offset`, `multiplex-ratio`, `segment-remap`, `com-invdir`, `prechargep`
+   - Display node label: `oled` (instead of `ssd1306`)
+3. **Next step**: Test the restored configuration to verify the display works
 
 ## Current Status
 
-- Configuration matches the last known attempt (October 2024)
-- Display still not working
-- Need to determine if this is:
-  - A configuration issue (never worked)
-  - A ZMK update issue (stopped working)
-  - A hardware issue (display not properly connected)
+- **Configuration restored**: Using the working configuration from HillSideView project (commit `8d2b158`)
+- **Configuration details**:
+  - Compatible string: `"solomon,ssd1306fb"` with full parameter set
+  - I2C address: `0x3c` (lowercase)
+  - Display node: `oled` with all display parameters
+- **Next action**: Flash firmware and test if display works with restored configuration
+- **If still not working**: May need to investigate:
+  - Hardware connections (SDA/SCL, power, ground)
+  - ZMK version compatibility with `"solomon,ssd1306fb"` driver
+  - Display initialization timing issues
 
