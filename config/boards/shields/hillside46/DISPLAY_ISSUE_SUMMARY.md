@@ -28,23 +28,50 @@ Based on your git history:
 
 ## The Solution: External Power Toggle
 
-### Quick Fix (Try This First!)
+### Important: Battery Impact
 
-Your keymap already has external power controls in the **ADJ layer**:
-- `EP_OFF` - Turns off external power
-- `EP_ON` - Turns on external power
+**If you have batteries connected to both sides**:
+- External power controls (`EP_OFF`/`EP_ON`) typically control **USB/external power**, not battery power
+- With batteries, the keyboard stays powered from battery even when USB is disconnected
+- The display blanking is more likely due to **sleep/idle states** rather than power cutoff
+- External power toggle might not work the same way with batteries
 
-**To fix the blank display**:
+**For battery-powered keyboards**, the display typically blanks when:
+- Keyboard enters idle state (after inactivity)
+- Keyboard enters deep sleep (to save battery)
+- Display doesn't re-initialize when keyboard wakes up
+
+### Quick Fix Options
+
+#### Option 1: External Power Toggle (If USB Connected)
+If you're using USB power (even with battery connected), try:
 
 1. **Activate ADJ layer** (check your keymap for the ADJ layer key)
-2. **Press the key bound to `EP_OFF`** (turns off external power)
+2. **Press the key bound to `EP_OFF`** (turns off external/USB power)
 3. **Wait 1-2 seconds**
-4. **Press the key bound to `EP_ON`** (turns external power back on)
+4. **Press the key bound to `EP_ON`** (turns external/USB power back on)
 5. **Display should re-initialize and show content**
+
+#### Option 2: Power Cycle (Battery-Only)
+If running on battery only (no USB):
+
+1. **Turn off the keyboard** (power switch or disconnect battery)
+2. **Wait 2-3 seconds**
+3. **Turn keyboard back on**
+4. **Display should initialize on boot**
+
+#### Option 3: Prevent Display Blanking
+Your config has `CONFIG_ZMK_DISPLAY_BLANK_ON_IDLE=n` which should prevent blanking on idle, but the display might still blank on deep sleep. You can try:
+
+- **Disable deep sleep** (drains battery faster):
+  ```conf
+  CONFIG_ZMK_SLEEP=n
+  ```
+  Add this to `hillside46.conf` if not already there.
 
 ### Why This Works
 
-Toggling external power forces the display to re-initialize, which bypasses the bug where it doesn't re-init automatically after sleep.
+The display re-initialization bug occurs when the keyboard wakes from sleep. Power cycling (or toggling external power if USB is connected) forces a full re-initialization, bypassing the bug.
 
 ## Alternative: Add Toggle Key (More Convenient)
 
@@ -63,9 +90,11 @@ This gives you a single key that toggles external power on/off, making it easier
 2. **Power on keyboard** - Does display show on boot?
    - **Yes**: Hardware is fine, it's the re-init bug
    - **No**: Check hardware connections
-3. **Let keyboard go to sleep** (or disconnect power briefly)
+3. **Let keyboard go to sleep** (wait for idle/sleep, or disconnect USB if connected)
 4. **Wake keyboard** - Display is blank?
-5. **Use ADJ layer → EP_OFF → wait → EP_ON**
+5. **Try one of these**:
+   - **If USB connected**: Use ADJ layer → EP_OFF → wait → EP_ON
+   - **If battery only**: Power cycle (turn off/on) or disconnect/reconnect battery
 6. **Display should come back!**
 
 ## If External Power Toggle Doesn't Work
@@ -104,8 +133,12 @@ This is a **known ZMK bug** that hasn't been fixed yet. Options:
 - ✅ Your configuration is **correct**
 - ✅ Hardware is likely **fine** (keyboard works)
 - ✅ This is a **known ZMK bug** (Issue #674)
-- ✅ **Solution**: Toggle external power using EP_OFF/EP_ON keys
-- ✅ **Convenience**: Consider adding EP_TOG key for easier toggling
+- ✅ **With batteries**: Display blanks on sleep, doesn't re-init on wake
+- ✅ **Solution options**:
+  - Power cycle (turn off/on) if battery-only
+  - External power toggle (EP_OFF/EP_ON) if USB connected
+  - Disable sleep (drains battery faster)
+- ✅ **Convenience**: Consider adding EP_TOG key for easier toggling (if using USB)
 
-**Try the external power toggle first** - this is almost certainly the fix you need!
+**For battery-powered keyboards**: The display will likely blank when the keyboard goes to sleep. Power cycling is the most reliable way to get it back. This is a known limitation of ZMK display support.
 
