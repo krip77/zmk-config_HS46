@@ -133,10 +133,15 @@ When properly configured, the display shows:
 
 ### Display Not Working
 
+**Important**: If the restored configuration doesn't work with current ZMK, see `FINDING_CURRENT_SOLUTION.md` for a comprehensive guide on finding a solution that works with the current ZMK version.
+
 1. **Check Compatible String**
    - Current configuration uses `"solomon,ssd1306fb"` with additional parameters
-   - This configuration was found to work in the HillSideView project
-   - If this doesn't work, try `"ssd,ssd1306fb-i2c"` (simpler, but may not work with all displays)
+   - This configuration was found to work in the HillSideView project (before ZMK update)
+   - If this doesn't work with current ZMK, try:
+     - `"ssd,ssd1306fb-i2c"` (simpler, may work with newer ZMK)
+     - Check ZMK Discord/community for current recommended configuration
+     - See `FINDING_CURRENT_SOLUTION.md` for detailed troubleshooting steps
 
 2. **Verify I2C Address**
    - Default is `0x3C`

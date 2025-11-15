@@ -177,12 +177,16 @@ Since you mentioned this might be "another change" (not just the known bug), we 
 - ✅ **Configuration details**: `"solomon,ssd1306fb"` with full parameter set (from commit `8d2b158`)
 - ✅ Hardware is likely **fine** (keyboard works)
 - ⚠️ **This may be a different ZMK change** (not just Issue #674)
+- ⚠️ **Important**: Since you're using ZMK `main` branch (always latest), the old config may not work with current ZMK
 - ✅ **With batteries**: Display behavior may differ from USB-only setups
 - ✅ **Next steps**:
-  - **Flash firmware** with restored configuration
-  - Test if display works on fresh boot (confirms hardware OK)
-  - If display works on boot but goes blank after sleep, use external power toggle workaround
-  - If display doesn't work at all, check hardware connections and I2C address
+  1. **Test restored config first**: Flash firmware and test on fresh boot
+  2. **If it works**: Great! (may still have sleep/re-init issues - use external power toggle)
+  3. **If it doesn't work**: See `FINDING_CURRENT_SOLUTION.md` for how to find a solution that works with current ZMK
+  4. **Options if current ZMK is incompatible**:
+     - Pin `west.yml` to older ZMK version that worked
+     - Find current working configuration from ZMK community
+     - Try alternative compatible strings (`"ssd,ssd1306fb-i2c"`)
 
-**The restored configuration uses the exact settings that worked in the HillSideView project. This should resolve the display issue if it was a configuration problem.**
+**The restored configuration uses the exact settings that worked before. However, if ZMK changed and broke it, you may need to find a solution that works with current ZMK. See `FINDING_CURRENT_SOLUTION.md` for a comprehensive guide.**
 

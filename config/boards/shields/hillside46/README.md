@@ -25,3 +25,8 @@ For detailed information about setting up and configuring the OLED display,
 see [DISPLAY_CONFIG.md](DISPLAY_CONFIG.md). This includes hardware connections,
 firmware configuration, troubleshooting, and important notes about the display
 setup for Hillside 46.
+
+**If display doesn't work with current ZMK:**
+See [FINDING_CURRENT_SOLUTION.md](FINDING_CURRENT_SOLUTION.md) for a guide on
+finding a solution that works with the current ZMK version, including how to
+pin to older versions or find updated configurations.
