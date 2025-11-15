@@ -47,7 +47,7 @@ The display connects to the Hillside 46 PCB via the I2C header, which is arrange
 #### Compatible String
 The display uses the **`"solomon,ssd1306fb"`** compatible string with additional display parameters. This configuration was found to work in the [HillSideView project](https://github.com/wannabecoffeenerd/HillSideView) where someone successfully got an I2C display working.
 
-**Note**: You mentioned being in contact with "dalewking" who managed to get the I2C display working. The restored configuration may have been influenced by or based on their work. If you have any messages, emails, or forum posts from dalewking with additional configuration details, those could provide further insights.
+**Note**: You mentioned being in contact with "dalewking" who managed to get the I2C display working. dalewking's repository (https://github.com/dalewking/zmk-config) doesn't currently contain display configuration, suggesting the config was shared through other means (Discord, forum posts, direct messages). The restored configuration in your repo is likely what dalewking shared.
 
 **Working Configuration (from hillside view project):**
 ```dts

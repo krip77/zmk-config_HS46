@@ -56,8 +56,11 @@
 
 4. **dalewking contribution**
    - **Confirmed**: You were in contact with "dalewking" who managed to get the I2C display working
-   - **Note**: The restored configuration may have been based on or influenced by dalewking's work
-   - **Action**: If you have any messages, emails, or forum posts from dalewking with configuration details, those could provide additional insights or alternative solutions
+   - **Repository found**: https://github.com/dalewking/zmk-config
+   - **Finding**: dalewking's repository doesn't currently contain display configuration (clean fork from mmccoyd)
+   - **Conclusion**: The display configuration was likely shared through other means (Discord, forum posts, direct messages)
+   - **Current config**: The restored configuration in your repo (using `"solomon,ssd1306fb"` with full parameters) is likely what dalewking shared
+   - **Note**: The configuration matches what was in commit `8d2b158` from your repository history
 
 ## Resolution
 
