@@ -46,3 +46,9 @@
         height = <32>;
     };
 };
+
+/ {
+    chosen {
+        zephyr,display = &ssd1306;
+    };
+};
