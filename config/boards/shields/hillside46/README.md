@@ -19,3 +19,9 @@ If used, the following must be manually enabled in hillside46.conf:
 
 If desired, you could hardwire a display to the I2C header,
   which is arranged for a haptic feedback board.
+
+**Display Configuration:**
+For detailed information about setting up and configuring the OLED display,
+see [DISPLAY_CONFIG.md](DISPLAY_CONFIG.md). This includes hardware connections,
+firmware configuration, troubleshooting, and important notes about the display
+setup for Hillside 46.
