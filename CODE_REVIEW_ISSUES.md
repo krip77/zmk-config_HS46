@@ -6,13 +6,9 @@
 **Location:** `config/boards/shields/hillside46/hillside46.dtsi`
 **Issue:** The `default_transform` had an empty `map` definition: `map = < /* tangentbordsmatrisens karta */ >;`
 **Impact:** **CRITICAL** - The keyboard would not work at all without a proper keymap matrix definition
-**Status:** ✅ **FIXED** - Added matrix definition based on Hillside 48 layout
+**Status:** ✅ **FIXED** - Restored the original matrix definition from git history (commit c13ddf7)
 
-**⚠️ NOTE:** The matrix currently has 48 key positions, but Hillside 46 should have 46 keys (3x6+5 per half). The matrix will work, but you may need to adjust it if:
-- Some keys don't respond (the extra 2 positions won't have physical switches)
-- Keys are mapped to wrong positions
-
-**Recommendation:** Test the keyboard and verify key mappings. If adjustments are needed, remove 2 key positions from the matrix (likely from the thumb row or the extra positions in row 2).
+**✅ Verified:** The restored matrix has exactly 46 keys, matching the Hillside 46 layout (3x6+5 keys per half). This is the correct matrix from the original repository.
 
 ## ⚠️ WARNINGS (Potential Issues)
 
