@@ -1,18 +1,8 @@
 config SHIELD_ALIXW
     def_bool $(shields_list_contains,hillside46)
 
-#Tillagt för att få skärmen att funka 2024-10-22
-/ {
-    zephyr,display = &ssd1306;
-};
-
-&i2c1 {
-    status = "okay";
-    ssd1306: ssd1306@3C {
-        compatible = "ssd,ssd1306fb-i2c";
-        reg = <0x3C>;  // The I2C address of the display
-        width = <128>;
-        height = <32>;
-        label = "SSD1306";
-    };
-};
+# NOTE: Display configuration for hillside46 is now handled in:
+# - config/boards/shields/hillside46/Kconfig.defconfig (Kconfig settings)
+# - config/boards/shields/hillside46/hillside46_left.overlay (device tree)
+# This root-level configuration is kept for backward compatibility but may conflict.
+# If you have display issues, ensure hillside46_left.overlay is being used correctly.
