@@ -1,21 +1,30 @@
 # Keymap-drawer configuration for Hillside46 with Swedish Unicode characters
 
 draw_config:
-  # Key width and height
-  key_w: 60
-  key_h: 56
+  # Make it look much better
+  key_w: 64
+  key_h: 60
+  split_gap: 60
+  combo_w: 24
+  combo_h: 24
   
-  # Split keyboard spacing
-  split_gap: 30
+  # Better spacing
+  inner_pad_w: 4
+  inner_pad_h: 4
+  outer_pad_w: 40
+  outer_pad_h: 40
   
-  # Colors
+  # Colors and style
   dark_mode: false
   n_columns: 1
-  separate_layers: false
+  separate_layers: true  # Each layer gets its own diagram!
+  
+  # Font sizes
+  glyph_tap_size: 16
+  glyph_hold_size: 11
+  glyph_shifted_size: 10
   
   # Custom key labels for Swedish Unicode macros
-  glyph_tap_size: 14
-  glyph_hold_size: 12
   glyphs:
     "uc_a_ring_lower": "å"
     "uc_a_ring_upper": "Å"
@@ -26,37 +35,40 @@ draw_config:
     "uc_section": "§"
     "uc_pipe": "|"
     
-    # Tap-dance behaviors
-    "TD2_copy": "Y\n(Copy)"
-    "TD2_paste": "U\n(Paste)"
-    "undo": "I\n(Undo)"
-    "TD2_1F1": "1\n(F1)"
-    "TD2_2F2": "2\n(F2)"
-    "TD2_3F3": "3\n(F3)"
-    "TD2_4F4": "4\n(F4)"
-    "TD2_5F5": "5\n(F5)"
-    "TD2_6F6": "6\n(F6)"
-    "TD2_7F7": "7\n(F7)"
-    "TD2_8F8": "8\n(F8)"
-    "TD2_9F9": "9\n(F9)"
-    "TD2_10F10": "0\n(F10)"
+    # Tap-dance behaviors - cleaner labels
+    "TD2_copy": "Y"
+    "TD2_paste": "U"
+    "undo": "I"
+    "TD2_1F1": "1"
+    "TD2_2F2": "2"
+    "TD2_3F3": "3"
+    "TD2_4F4": "4"
+    "TD2_5F5": "5"
+    "TD2_6F6": "6"
+    "TD2_7F7": "7"
+    "TD2_8F8": "8"
+    "TD2_9F9": "9"
+    "TD2_10F10": "0"
     
   # Layer names
   layer_names:
-    default: "Default (QWERTY Swedish)"
-    nav: "Navigation"
-    sym: "Symbols"
-    adj: "Adjust"
-    NumPad: "NumPad"
+    default: "Default Layer (QWERTY Swedish)"
+    nav: "Navigation Layer"
+    sym: "Symbols Layer"
+    adj: "Adjust Layer"
+    NumPad: "NumPad Layer"
+
+  # Footer
+  footer_text: "Hillside46 with Swedish Unicode • Generated with keymap-drawer"
 
 parse_config:
   # Mark layers that are activated
   mark_alternate_layer_activators: true
   
-  # Combos
+  # Don't draw key sides
   draw_key_sides: false
   
-  # Split keyboard
+  # Split keyboard - use hillside46 layout
   zmk_keyboard: hillside46
   
   # Custom binding mappings for Unicode macros
@@ -66,7 +78,6 @@ parse_config:
     "&uc_a_umlaut_lower": "ä"
     "&uc_a_umlaut_upper": "Ä"
     "&uc_o_umlaut_lower": "ö"
-    "&uc_o_umlaut_upper": "Ö"
+    "&uc_o_umlaut_lower": "Ö"
     "&uc_section": "§"
     "&uc_pipe": "|"
-

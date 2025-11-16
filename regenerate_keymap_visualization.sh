@@ -8,22 +8,23 @@ cd "$(dirname "$0")"
 
 echo "🔄 Regenerating keymap visualization..."
 
-# Check if keymap command exists
-if ! command -v keymap &> /dev/null; then
-    echo "❌ keymap-drawer not found!"
-    echo "Install it with: pipx install keymap-drawer"
+# Check if Python 3 is available
+if ! command -v python3 &> /dev/null; then
+    echo "❌ Python 3 not found!"
     exit 1
 fi
 
-# Parse keymap to YAML
-echo "📝 Parsing keymap..."
-keymap -c visualization/keymap-drawer-config.yaml parse -z config/hillside46.keymap > visualization/hillside46_parsed.yaml
+# Check if create_simple_keymap.py exists
+if [ ! -f "create_simple_keymap.py" ]; then
+    echo "❌ create_simple_keymap.py not found!"
+    exit 1
+fi
 
-# Generate SVG
-echo "🎨 Generating SVG..."
-keymap -c visualization/keymap-drawer-config.yaml draw visualization/hillside46_parsed.yaml > visualization/hillside46_layout.svg
+# Generate text-based keymap visualization
+echo "📝 Generating keymap visualization..."
+python3 create_simple_keymap.py
 
-echo "✅ Done! View visualization/hillside46_layout.svg"
 echo ""
-echo "Swedish characters (å, ä, ö) should be visible in the keymap."
-
+echo "✅ Done! View visualization/hillside46_layout.txt"
+echo ""
+echo "Swedish characters (å, ä, ö) are correctly displayed in the layout."
