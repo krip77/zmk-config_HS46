@@ -111,16 +111,6 @@
             bindings = <&kp MINUS>;
             key-positions = <33 32>;
         };
-
-        superW {
-            bindings = <&whisper>;
-            key-positions = <5 4>;
-        };
-
-        superEN {
-            bindings = <&whisperEN>;
-            key-positions = <4 3>;
-        };
     };
 
     behaviors {
@@ -312,20 +302,6 @@
             label = "PASTEPAL";
         };
 
-        whisper: whisper {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&trans>;
-            label = "WHISPER";
-        };
-
-        whisperEN: whisperEN {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(NUMBER_2)>;
-            label = "WHISPEREN";
-        };
-
         // Unicode macros for Swedish characters (macOS Option+hex input)
         uc_a_ring_lower: uc_a_ring_lower {
             compatible = "zmk,behavior-macro";
@@ -419,16 +395,16 @@
             /* QWERTY (Swedish Layout with Unicode)
  * -------------------------------------------------------------------------------------------------------------------------------------
  * | Esc   |   Q   |   W   |   E   |   R   |   T   |-----------------------------------| Copy  | Paste | Undo  |   O   |   P   |   Å   |
- * | TAB   |   A   |   S   |   D   |   F   |   G   |-----------------------------------|   H   |   J   |   K   |   L   | Ctrl  |   Ö   |
- * | ALT   |   Z   |   X   |   C   |   V   |   B   | CAPS  |-------------------| PrtSc |   N   |   M   |   ,   |   .   |   /   |   Ä   |
+ * | TAB   |   A   |   S   |   D   |   F   |   G   |-----------------------------------|   H   |   J   |   K   |   L   |   Ö   |   Ä   |
+ * | ALT   |   Z   |   X   |   C   |   V   |   B   | CAPS  |-------------------| PrtSc |   N   |   M   |   ,   |   .   |   /   |  Del  |
  *                                 |  GUI  | Shift | BSPC  |  Nav  |---|  Sym  | SPACE |  GUI  | Ctrl  |
  * Note: Swedish characters (Å, Ä, Ö) use Unicode for consistent display across OS and web UIs
  */
 
             bindings = <
-&kp ESCAPE    &kp Q  &kp W  &kp E               &kp R             &kp T                                                                  &TD2_copy               &TD2_paste        &undo           &kp O       &kp P             SV_aa
-&kp TAB       &kp A  &kp S  &hm LEFT_COMMAND D  &hm LEFT_SHIFT F  &kp G                                                                  &kp H                   &hm LEFT_SHIFT J  &hm LEFT_GUI K  &hm LALT L  &kp RIGHT_CONTROL SV_oe
-&kp LEFT_ALT  &kp Z  &kp X  &kp C               &kp V             &kp B      &kp CAPSLOCK                               &kp PRINTSCREEN  &kp N                   &kp M             &kp COMMA       &kp PERIOD  &kp SLASH         SV_ae
+&kp ESCAPE    &kp Q  &kp W  &kp E               &kp R             &kp T                                                                  &TD2_copy               &TD2_paste        &undo           &kp O       &kp P      SV_aa
+&kp TAB       &kp A  &kp S  &hm LEFT_COMMAND D  &hm LEFT_SHIFT F  &kp G                                                                  &kp H                   &hm LEFT_SHIFT J  &hm LEFT_GUI K  &hm LALT L  &kp SEMI   SV_ae
+&kp LEFT_ALT  &kp Z  &kp X  &kp C               &kp V             &kp B      &kp CAPSLOCK                               &kp PRINTSCREEN  &kp N                   &kp M             &kp COMMA       &kp PERIOD  &kp SLASH  &kp DELETE
                                                 &kp LGUI          &kp LSHFT  &lt 2 BACKSPACE  &mo 3    &lt 4 RS(RG(P))  &lt 1 SPACE      &hm LEFT_GUI RS(RG(O))  &kp LEFT_CONTROL
             >;
         };
@@ -452,12 +428,12 @@
         }; */
 
         nav_layer {
-            /* NAV (Swedish Layout)
+            /* NAV (Swedish Layout with Unicode)
  * -------------------------------------------------------------------------------------------------------------------------------------
  * | Copy  |   1   |   2   |   3   |   4   |   5   |-----------------------------------|   6   |   7   |   8   |   9   |   0   |   0   |
- * | Cut   |  GUI  |  Alt  | Ctrl  | Shift | Paste |-----------------------------------| PgUp  | Left  |  Up   | Down  | Right |   Ä   |
- * |       |  F1   |  F2   |  F3   |  F4   |  F5   | Undo  |-------------------|       |  End  | PgUp  | Down  | PgDn  |  F10  | Ctrl  |
- *                                 |  GUI  | Shift | BSPC  |       | Nav  | Space | Ctrl  |  Alt  |
+ * | Cut   |  GUI  |  Alt  | Ctrl  | Shift | Paste |-----------------------------------| PG UP |  Left |  Up   |  Down | Right |   Ä   |
+ * |       |  F1   |  F2   |  F3   |  F4   |  F5   | Undo  |-------------------| ReDo  |  End  | PG UP | Down  | PG DN |  F10  | Ctrl  |
+ *                                 |       |       |       |       |---| ADJ_L |       |       |       |
  */
 
             bindings = <
