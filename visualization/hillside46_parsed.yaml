@@ -1,0 +1,272 @@
+layout: {zmk_keyboard: hillside46}
+layers:
+  default:
+  - ESCAPE
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - '&TD2_copy'
+  - '&TD2_paste'
+  - '&undo'
+  - O
+  - P
+  - å
+  - TAB
+  - A
+  - S
+  - {t: D, h: LEFT COMMAND}
+  - {t: F, h: LEFT SHIFT}
+  - G
+  - H
+  - {t: J, h: LEFT SHIFT}
+  - {t: K, h: LEFT GUI}
+  - {t: L, h: LALT}
+  - ;
+  - ä
+  - LEFT ALT
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - CAPSLOCK
+  - PRINTSCREEN
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - DELETE
+  - LGUI
+  - LSHFT
+  - {t: BACKSPACE, h: sym}
+  - adj
+  - {t: Sft+Gui+P, h: NumPad}
+  - {t: SPACE, h: nav}
+  - {t: Sft+Gui+O, h: LEFT GUI}
+  - LEFT CONTROL
+  nav:
+  - Ctl+C
+  - '&TD2_1F1'
+  - '&TD2_2F2'
+  - '&TD2_3F3'
+  - '&TD2_4F4'
+  - '&TD2_5F5'
+  - '&TD2_6F6'
+  - '&TD2_7F7'
+  - '&TD2_8F8'
+  - '&TD2_9F9'
+  - '&TD2_10F10'
+  - '0'
+  - Ctl+X
+  - LGUI
+  - LALT
+  - LCTRL
+  - LSHFT
+  - '!'
+  - Sft+-
+  - LEFT
+  - UP
+  - RIGHT ARROW
+  - {t: ▽, type: trans}
+  - ä
+  - {t: ▽, type: trans}
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - Ctl+Z
+  - {t: ▽, type: trans}
+  - END
+  - PAGE UP
+  - DOWN
+  - PG DN
+  - F10
+  - RCTRL
+  - LGUI
+  - LSHFT
+  - {t: BACKSPACE, h: sym}
+  - {t: ▽, type: trans}
+  - adj
+  - {t: SPACE, h: nav, type: held}
+  - LEFT CONTROL
+  - RIGHT ALT
+  sym:
+  - INS
+  - AltGr+2
+  - Sft+2
+  - Sft+3
+  - AltGr+5
+  - Sft+5
+  - Sft+6
+  - Sft+7
+  - Sft+8
+  - Sft+9
+  - PLAY PAUSE
+  - NEXT
+  - Sft++
+  - \
+  - '-'
+  - {t: Sft+0, h: LCTRL}
+  - {t: Sft+8, h: LSHIFT}
+  - \
+  - /
+  - '|'
+  - AltGr+8
+  - AltGr+9
+  - VOL DN
+  - VOLUME UP
+  - {t: ▽, type: trans}
+  - AltGr+7
+  - _
+  - +
+  - AltGr+8
+  - '|'
+  - {t: RALT, h: sticky}
+  - APP
+  - Sft+/
+  - VOL DN
+  - ','
+  - .
+  - PREV
+  - NEXT
+  - LGUI
+  - LSHFT
+  - {t: BACKSPACE, h: sym, type: held}
+  - adj
+  - {t: ▽, type: trans}
+  - {t: SPACE, h: nav, type: held alternate}
+  - LEFT CONTROL
+  - RIGHT ALT
+  adj:
+  - ''
+  - {t: default, h: toggle}
+  - {t: default, h: toggle}
+  - {t: default, h: toggle}
+  - ''
+  - ''
+  - ''
+  - F11
+  - F12
+  - PRINTSCREEN
+  - EP OFF
+  - EP ON
+  - '&sys_reset'
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - {t: BT, h: '4'}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&sys_reset'
+  - '&bootloader'
+  - LGUI
+  - LALT
+  - LCTRL
+  - LSHIFT
+  - ''
+  - BT CLR
+  - ''
+  - ''
+  - ''
+  - OUT USB
+  - OUT BLE
+  - ''
+  - '&bootloader'
+  - LGUI
+  - LSHFT
+  - {t: BACKSPACE, h: sym, type: held alternate}
+  - {type: held}
+  - {type: held alternate}
+  - {t: SPACE, h: nav, type: held alternate}
+  - LEFT CONTROL
+  - RIGHT ALT
+  NumPad:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F1
+  - F2
+  - F3
+  - F4
+  - '-'
+  - '7'
+  - '8'
+  - '9'
+  - Sft+7
+  - Sft+0
+  - TAB
+  - {t: ▽, type: trans}
+  - F5
+  - F6
+  - F7
+  - F8
+  - /
+  - '4'
+  - '5'
+  - '6'
+  - Sft+#
+  - .
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F9
+  - F10
+  - F11
+  - F12
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '0'
+  - '1'
+  - '2'
+  - '3'
+  - RET
+  - ','
+  - LGUI
+  - LSHFT
+  - {t: BACKSPACE, h: sym}
+  - '0'
+  - {type: held}
+  - {t: SPACE, h: nav}
+  - LEFT CONTROL
+  - RIGHT ALT
+combos:
+- p: [16, 19]
+  k: ENTER
+- p: [20, 15]
+  k: Ctl+BACKSPACE
+- p: [41, 42]
+  k: {t: default, h: toggle}
+- p: [43, 19]
+  k: BACKSPACE
+- p: [43, 23]
+  k: F8
+- p: [43, 22]
+  k: F3
+- p: [19, 20]
+  k: ENTER
+- p: [20, 21]
+  k: Gui+BACKSPACE
+- p: [6, 7]
+  k: \
+- p: [11, 23]
+  k: Å
+- p: [34, 35]
+  k: Alt+SPACE
+- p: [7, 19]
+  k: ö
+- p: [8, 20]
+  k: ä
+- p: [9, 21]
+  k: å
+- p: [7, 8]
+  k: Sft+0
+- p: [18, 19]
+  k: /
+- p: [33, 32]
+  k: '-'
