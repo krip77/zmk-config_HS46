@@ -1,0 +1,10 @@
+# Build directories
+build/
+build_*/
+
+# ZMK repository (cloned locally for builds)
+zmk/
+
+# Build logs
+*.log
+
