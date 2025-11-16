@@ -157,7 +157,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD2_PASTE";
             #binding-cells = <0>;
-            bindings = <&kp U>, <&kp LC(V)>;
+            bindings = <&kp U>, <&kp LG(V)>;
 
             tapping-term-ms = <300>;
         };
@@ -166,7 +166,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD2_COPY";
             #binding-cells = <0>;
-            bindings = <&kp Y>, <&kp LC(C)>;
+            bindings = <&kp Y>, <&kp LG(C)>;
 
             tapping-term-ms = <300>;
         };
@@ -265,7 +265,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "UNDO";
             #binding-cells = <0>;
-            bindings = <&kp I>, <&kp LC(Z)>;
+            bindings = <&kp I>, <&kp LG(Z)>;
 
             tapping-term-ms = <250>;
         };
@@ -297,9 +297,17 @@
         pastepal: pastepal {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&kp LEFT_GUI &kp LEFT_GUI>;
+            bindings = <&macro_tap>, <&kp LEFT_GUI &kp LEFT_GUI>;
 
             label = "PASTEPAL";
+        };
+
+        snip: snip {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp LEFT_ALT>, <&macro_tap>;
+
+            label = "SNIP";
         };
     };
 
@@ -319,7 +327,7 @@
 &kp ESCAPE    &kp Q               &kp W           &kp E               &kp R             &kp T                                                                  &TD2_copy               &TD2_paste        &undo           &kp O       &kp P                  &kp LBKT
 &kp TAB       &hm LEFT_CONTROL A  &hm LEFT_ALT S  &hm LEFT_COMMAND D  &hm LEFT_SHIFT F  &kp G                                                                  &kp H                   &hm LEFT_SHIFT J  &hm LEFT_GUI K  &hm LALT L  &hm LEFT_CONTROL SEMI  &kp SQT
 &kp LEFT_ALT  &kp Z               &kp X           &kp C               &kp V             &kp B      &kp CAPSLOCK                               &kp PRINTSCREEN  &kp N                   &kp M             &kp COMMA       &kp PERIOD  &kp SLASH              &kp DELETE
-                                                                      &kp LGUI          &kp LSHFT  &lt 2 BACKSPACE  &mo 3    &lt 4 RS(RG(P))  &lt 1 SPACE      &hm LEFT_GUI RS(RG(O))  &kp LEFT_CONTROL
+                                                                      &snip             &pastepal  &lt 2 BACKSPACE  &mo 3    &lt 4 RS(RG(P))  &lt 1 SPACE      &hm LEFT_GUI RS(RG(O))  &kp LEFT_CONTROL
             >;
         };
 
