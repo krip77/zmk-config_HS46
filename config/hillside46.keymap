@@ -73,7 +73,7 @@
         };
 
         skriv_aa {
-            bindings = <&uc_a_ring_upper>;
+            bindings = <&kp LEFT_BRACKET>;
             key-positions = <11 23>;
         };
 
@@ -83,17 +83,17 @@
         };
 
         oo {
-            bindings = <&uc_o_umlaut_lower>;
+            bindings = <&kp SEMI>;
             key-positions = <7 19>;
         };
 
         aoo {
-            bindings = <&uc_a_umlaut_lower>;
+            bindings = <&kp SQT>;
             key-positions = <8 20>;
         };
 
         ao {
-            bindings = <&uc_a_ring_lower>;
+            bindings = <&kp LBKT>;
             key-positions = <9 21>;
         };
 
@@ -148,7 +148,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "AO";
             #binding-cells = <0>;
-            bindings = <&kp L>, <&uc_a_ring_lower>;
+            bindings = <&kp L>, <&kp LBKT>;
 
             tapping-term-ms = <200>;
         };
@@ -301,109 +301,23 @@
 
             label = "PASTEPAL";
         };
-
-        // Unicode macros for Swedish characters (macOS Option+hex input)
-        uc_a_ring_lower: uc_a_ring_lower {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>,
-                       <&macro_tap &kp N0 &kp N0 &kp E &kp N5>,
-                       <&macro_release &kp LALT>;
-            label = "UC_AA_LOWER";
-        };
-
-        uc_a_umlaut_lower: uc_a_umlaut_lower {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>,
-                       <&macro_tap &kp N0 &kp N0 &kp E &kp N4>,
-                       <&macro_release &kp LALT>;
-            label = "UC_AE_LOWER";
-        };
-
-        uc_o_umlaut_lower: uc_o_umlaut_lower {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>,
-                       <&macro_tap &kp N0 &kp N0 &kp F &kp N6>,
-                       <&macro_release &kp LALT>;
-            label = "UC_OE_LOWER";
-        };
-
-        uc_a_ring_upper: uc_a_ring_upper {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>,
-                       <&macro_tap &kp N0 &kp N0 &kp C &kp N5>,
-                       <&macro_release &kp LALT>;
-            label = "UC_AA_UPPER";
-        };
-
-        uc_a_umlaut_upper: uc_a_umlaut_upper {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>,
-                       <&macro_tap &kp N0 &kp N0 &kp C &kp N4>,
-                       <&macro_release &kp LALT>;
-            label = "UC_AE_UPPER";
-        };
-
-        uc_o_umlaut_upper: uc_o_umlaut_upper {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>,
-                       <&macro_tap &kp N0 &kp N0 &kp D &kp N6>,
-                       <&macro_release &kp LALT>;
-            label = "UC_OE_UPPER";
-        };
-
-        uc_section: uc_section {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>,
-                       <&macro_tap &kp N0 &kp N0 &kp A &kp N7>,
-                       <&macro_release &kp LALT>;
-            label = "UC_SECTION";
-        };
-
-        uc_pipe: uc_pipe {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>,
-                       <&macro_tap &kp N0 &kp N0 &kp N7 &kp C>,
-                       <&macro_release &kp LALT>;
-            label = "UC_PIPE";
-        };
     };
-};
 
-// Swedish character aliases for Unicode macros
-#define SV_aa &uc_a_ring_lower
-#define SV_AA &uc_a_ring_upper
-#define SV_ae &uc_a_umlaut_lower
-#define SV_AE &uc_a_umlaut_upper
-#define SV_oe &uc_o_umlaut_lower
-#define SV_OE &uc_o_umlaut_upper
-#define SV_section &uc_section
-#define SV_pipe &uc_pipe
-
-/ {
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
-            /* QWERTY (Swedish Layout with Unicode)
+            /* QWERTY
  * -------------------------------------------------------------------------------------------------------------------------------------
- * | Esc   |   Q   |   W   |   E   |   R   |   T   |-----------------------------------| Copy  | Paste | Undo  |   O   |   P   |   Å   |
- * | TAB   |   A   |   S   |   D   |   F   |   G   |-----------------------------------|   H   |   J   |   K   |   L   |   Ö   |   Ä   |
- * | ALT   |   Z   |   X   |   C   |   V   |   B   | CAPS  |-------------------| PrtSc |   N   |   M   |   ,   |   .   |   /   |  Del  |
- *                                 |  GUI  | Shift | BSPC  |  Nav  |---|  Sym  | SPACE |  GUI  | Ctrl  |
- * Note: Swedish characters (Å, Ä, Ö) use Unicode for consistent display across OS and web UIs
+ * | `     |   Q   |   W   |   E   |   R   |   T   |-----------------------------------|   Y   |   U   |   I   |   O   |   P   | BKSPC |
+ * | TAB   |   A   |   S   |   D   |   F   |   G   |-----------------------------------|   H   |   J   |   K   |   L   |   ;   | ENTER |
+ * | CTRL  |   Z   |   X   |   C   |   V   |   B   |  ESC  |-------------------|  CAPS |   N   |   M   |   ,   |   .   |   /   |   '   |
+ *                                 |  GUI  |  ALT  |SK SHFT|  Nav  |---|  Sym  | SPACE |  ALT  |  GUI  |
  */
 
             bindings = <
-&kp ESCAPE    &kp Q  &kp W  &kp E               &kp R             &kp T                                                                  &TD2_copy               &TD2_paste        &undo           &kp O       &kp P      SV_aa
-&kp TAB       &kp A  &kp S  &hm LEFT_COMMAND D  &hm LEFT_SHIFT F  &kp G                                                                  &kp H                   &hm LEFT_SHIFT J  &hm LEFT_GUI K  &hm LALT L  &kp SEMI   SV_ae
+&kp ESCAPE    &kp Q  &kp W  &kp E               &kp R             &kp T                                                                  &TD2_copy               &TD2_paste        &undo           &kp O       &kp P      &kp LBKT
+&kp TAB       &kp A  &kp S  &hm LEFT_COMMAND D  &hm LEFT_SHIFT F  &kp G                                                                  &kp H                   &hm LEFT_SHIFT J  &hm LEFT_GUI K  &hm LALT L  &kp SEMI   &kp SQT
 &kp LEFT_ALT  &kp Z  &kp X  &kp C               &kp V             &kp B      &kp CAPSLOCK                               &kp PRINTSCREEN  &kp N                   &kp M             &kp COMMA       &kp PERIOD  &kp SLASH  &kp DELETE
                                                 &kp LGUI          &kp LSHFT  &lt 2 BACKSPACE  &mo 3    &lt 4 RS(RG(P))  &lt 1 SPACE      &hm LEFT_GUI RS(RG(O))  &kp LEFT_CONTROL
             >;
@@ -428,17 +342,17 @@
         }; */
 
         nav_layer {
-            /* NAV (Swedish Layout with Unicode)
+            /* NAV   
  * -------------------------------------------------------------------------------------------------------------------------------------
- * | Copy  |   1   |   2   |   3   |   4   |   5   |-----------------------------------|   6   |   7   |   8   |   9   |   0   |   0   |
- * | Cut   |  GUI  |  Alt  | Ctrl  | Shift | Paste |-----------------------------------| PG UP |  Left |  Up   |  Down | Right |   Ä   |
- * |       |  F1   |  F2   |  F3   |  F4   |  F5   | Undo  |-------------------| ReDo  |  End  | PG UP | Down  | PG DN |  F10  | Ctrl  |
+ * | Copy  |   1   |   2   |   3   |   4   |   5   |-----------------------------------|   6   |   7   |   8   |   9   |   0   | BSPC  |
+ * | Cut   |  GUI  |  Alt  | Ctrl  | Shift | Paste |-----------------------------------| PG UP |  Left |  Up   |  Down | Right | PG DN |
+ * | Ctrl  |  F1   |  F2   |  F3   |  F4   |  F5   |  UnDo |-------------------| ReDo  |  F6   |  F7   |  F8   |  F9   |  F10  | Ctrl  |
  *                                 |       |       |       |       |---| ADJ_L |       |       |       |
  */
 
             bindings = <
 &kp Copy  &TD2_1F1  &TD2_2F2  &TD2_3F3   &TD2_4F4   &TD2_5F5                                                  &TD2_6F6          &TD2_7F7       &TD2_8F8  &TD2_9F9         &TD2_10F10  &kp N0
-&kp Cut   &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp EXCL                                                  &kp LS(MINUS)     &kp LEFT       &kp UP    &kp RIGHT_ARROW  &trans      SV_ae
+&kp Cut   &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp EXCL                                                  &kp LS(MINUS)     &kp LEFT       &kp UP    &kp RIGHT_ARROW  &trans      &kp SQT
 &trans    &kp F1    &kp F2    &kp F3     &kp F4     &kp F5     &kp Undo                          &trans       &kp END           &kp PAGE_UP    &kp DOWN  &kp PG_DN        &kp F10     &kp RCTRL
                                          &kp LGUI   &kp LSHFT  &lt 2 BACKSPACE  &trans    &mo 3  &lt 1 SPACE  &kp LEFT_CONTROL  &kp RIGHT_ALT
             >;
