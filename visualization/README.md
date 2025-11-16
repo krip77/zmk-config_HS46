@@ -39,9 +39,25 @@ Om du använder [ZMK Keymap Editor](https://www.leskoff.com/zmk-keymap-editor), 
 
 ### 4. För Nick Coutsos Keymap Editor
 
-[Keymap Editor](https://github.com/nickcoutsos/keymap-editor) läser direkt från keymap-filen. För att visa svenska tecken:
-1. Du kan behöva modifiera keymap-filen temporärt för visualisering
-2. Eller använda keymap-drawer lokalt med svensk konfiguration
+[Nick Coutsos Keymap Editor](https://nickcoutsos.github.io/keymap-editor/) läser direkt från keymap-filen och visar tangentkoder som de är definierade i `bindings`. 
+
+**Begränsning:** Verktyget visar fysiska tangentkoder (`&kp LBRACKET`, `&kp SEMI`, `&kp SQT`) som amerikanska tecken (`[`, `;`, `'`) istället för svenska tecken (`Å`, `Ö`, `Ä`).
+
+**Lösningar:**
+
+1. **Använd visualiseringsfilen** (Rekommenderat):
+   - Öppna `visualization/hillside46_keymap_editor_swe.keymap` i [Nick Coutsos Keymap Editor](https://nickcoutsos.github.io/keymap-editor/)
+   - Denna fil använder svenska makron (`SE_ARNG`, `SE_ODIA`, `SE_ADIA`) som kommer att visas i verktyget
+   - **OBS:** Denna fil är endast för visualisering - använd inte för att bygga firmware!
+
+2. **Manuell mappning i huvudet:**
+   - När du ser `[` i verktyget, tänk på det som `Å`
+   - När du ser `;` i verktyget, tänk på det som `Ö`
+   - När du ser `'` i verktyget, tänk på det som `Ä`
+
+3. **Använd keymap-drawer istället:**
+   - Installera keymap-drawer lokalt och använd `visualization/hillside46_swe.yaml`
+   - Detta ger bättre kontroll över hur tangenterna visas
 
 ## Användning
 
