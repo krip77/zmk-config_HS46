@@ -9,6 +9,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define QWERTY_L 0
 #define DVORAK_L 1
@@ -110,6 +111,11 @@
         plus {
             bindings = <&kp MINUS>;
             key-positions = <33 32>;
+        };
+
+        Whisper {
+            bindings = <&kp LG(NON_US_BACKSLASH)>;
+            key-positions = <5 4>;
         };
     };
 
@@ -359,10 +365,10 @@
  */
 
             bindings = <
-&kp Copy  &TD2_1F1  &TD2_2F2  &TD2_3F3   &TD2_4F4   &TD2_5F5                                                  &TD2_6F6          &TD2_7F7       &TD2_8F8  &TD2_9F9         &TD2_10F10  &kp N0
-&kp Cut   &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp EXCL                                                  &kp LS(MINUS)     &kp LEFT       &kp UP    &kp RIGHT_ARROW  &trans      &kp SQT
-&trans    &kp F1    &kp F2    &kp F3     &kp F4     &kp F5     &kp Undo                          &trans       &kp END           &kp PAGE_UP    &kp DOWN  &kp PG_DN        &kp F10     &kp RCTRL
-                                         &kp LGUI   &kp LSHFT  &lt 2 BACKSPACE  &trans    &mo 3  &lt 1 SPACE  &kp LEFT_CONTROL  &kp RIGHT_ALT
+&kp Copy  &TD2_1F1  &TD2_2F2        &TD2_3F3        &TD2_4F4         &TD2_5F5                                                  &TD2_6F6          &TD2_7F7       &TD2_8F8  &TD2_9F9         &TD2_10F10  &kp N0
+&kp Cut   &kp LGUI  &mmv MOVE_LEFT  &mmv MOVE_UP    &mmv MOVE_RIGHT  &kp EXCL                                                  &kp LS(MINUS)     &kp LEFT       &kp UP    &kp RIGHT_ARROW  &trans      &kp SQT
+&trans    &kp F1    &kp F2          &mmv MOVE_DOWN  &kp F4           &kp F5     &kp Undo                          &trans       &kp END           &kp PAGE_UP    &kp DOWN  &kp PG_DN        &kp F10     &kp RCTRL
+                                                    &kp LGUI         &kp LSHFT  &lt 2 BACKSPACE  &trans    &mo 3  &lt 1 SPACE  &kp LEFT_CONTROL  &kp RIGHT_ALT
             >;
         };
 
