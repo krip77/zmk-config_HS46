@@ -331,12 +331,13 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            /* QWERTY
+            /* QWERTY (Swedish Layout)
  * -------------------------------------------------------------------------------------------------------------------------------------
- * | `     |   Q   |   W   |   E   |   R   |   T   |-----------------------------------|   Y   |   U   |   I   |   O   |   P   | BKSPC |
- * | TAB   |   A   |   S   |   D   |   F   |   G   |-----------------------------------|   H   |   J   |   K   |   L   |   ;   | ENTER |
- * | CTRL  |   Z   |   X   |   C   |   V   |   B   |  ESC  |-------------------|  CAPS |   N   |   M   |   ,   |   .   |   /   |   '   |
- *                                 |  GUI  |  ALT  |SK SHFT|  Nav  |---|  Sym  | SPACE |  ALT  |  GUI  |
+ * | Esc   |   Q   |   W   |   E   |   R   |   T   |-----------------------------------| Copy  | Paste | Undo  |   O   |   P   |   Å   |
+ * | TAB   |   A   |   S   |   D   |   F   |   G   |-----------------------------------|   H   |   J   |   K   |   L   |   Ö   |   Ä   |
+ * | ALT   |   Z   |   X   |   C   |   V   |   B   | CAPS  |-------------------| PrtSc |   N   |   M   |   ,   |   .   |   /   |  Del  |
+ *                                 |  GUI  | Shift | BSPC  |  Nav  |---|  Sym  | SPACE |  GUI  | Ctrl  |
+ * Note: Swedish layout - Å, Ä, Ö are on physical keys [, ;, ' respectively
  */
 
             bindings = <
@@ -366,12 +367,12 @@
         }; */
 
         nav_layer {
-            /* NAV   
+            /* NAV (Swedish Layout)
  * -------------------------------------------------------------------------------------------------------------------------------------
- * | Copy  |   1   |   2   |   3   |   4   |   5   |-----------------------------------|   6   |   7   |   8   |   9   |   0   | BSPC  |
- * | Cut   |  GUI  |  Alt  | Ctrl  | Shift | Paste |-----------------------------------| PG UP |  Left |  Up   |  Down | Right | PG DN |
- * | Ctrl  |  F1   |  F2   |  F3   |  F4   |  F5   |  UnDo |-------------------| ReDo  |  F6   |  F7   |  F8   |  F9   |  F10  | Ctrl  |
- *                                 |       |       |       |       |---| ADJ_L |       |       |       |
+ * | Copy  |   1   |   2   |   3   |   4   |   5   |-----------------------------------|   6   |   7   |   8   |   9   |   0   |   0   |
+ * | Cut   |  GUI  |  Alt  | Ctrl  | Shift | Paste |-----------------------------------| PgUp  | Left  |  Up   | Down  | Right |   Ä   |
+ * |       |  F1   |  F2   |  F3   |  F4   |  F5   | Undo  |-------------------|       |  End  | PgUp  | Down  | PgDn  |  F10  | Ctrl  |
+ *                                 |  GUI  | Shift | BSPC  |       | Nav  | Space | Ctrl  |  Alt  |
  */
 
             bindings = <

@@ -1,0 +1,108 @@
+# Swedish layout visualization for Hillside 46
+# This file maps physical keys to Swedish characters for display in web interfaces
+# Based on Swedish keyboard layout (SE)
+
+layout:
+    split: true
+    rows: 3
+    columns: 6
+    thumbs: 5
+
+# Swedish key mapping reference:
+# &kp LBRACKET → Å
+# &kp SEMI → Ö  
+# &kp SQT → Ä
+# &kp MINUS → +
+# &kp EQUAL → ´
+# &kp NUHS → '
+# &kp NUBS → <
+
+layers:
+    default_layer:
+        left:
+            - [Esc, Q, W, E, R, T]
+            - [Tab, A, S, D, F, G]
+            - [Alt, Z, X, C, V, B]
+        right:
+            - [Copy, Paste, Undo, O, P, Å]
+            - [H, J, K, L, Ö, Ä]
+            - [N, M, ",", ".", "/", Del]
+        left_thumbs:
+            - tap: Gui
+            - tap: Shift
+            - tap: Nav
+            - tap: Sym
+            - tap: Space
+        right_thumbs:
+            - tap: Ctrl
+            - tap: Alt
+            - tap: ""
+            - tap: ""
+            - tap: ""
+
+    nav_layer:
+        left:
+            - [Copy, "1", "2", "3", "4", "5"]
+            - [Cut, Gui, Alt, Ctrl, Shift, Paste]
+            - ["", F1, F2, F3, F4, F5]
+        right:
+            - ["6", "7", "8", "9", "0", "0"]
+            - [PgUp, Left, Up, Down, Right, Ä]
+            - [End, PgUp, Down, PgDn, F10, Ctrl]
+        left_thumbs:
+            - tap: Gui
+            - tap: Shift
+            - tap: Nav
+            - tap: ""
+            - tap: Space
+        right_thumbs:
+            - tap: Ctrl
+            - tap: Alt
+            - tap: ""
+            - tap: ""
+            - tap: ""
+
+    sym_layer:
+        left:
+            - [Ins, "!", "@", "#", "$", "%"]
+            - ["+", "\\", "-", "=", "[", "]"]
+            - ["", "|", "_", "+", "{", "}"]
+        right:
+            - ["^", "&", "*", "(", ")", Play]
+            - ["/", "|", "[", "]", Vol-, Vol+]
+            - [Menu, Mute, Vol-, Vol+, Prev, Next]
+        left_thumbs:
+            - tap: Gui
+            - tap: Shift
+            - tap: ""
+            - tap: Sym
+            - tap: Space
+        right_thumbs:
+            - tap: Ctrl
+            - tap: Alt
+            - tap: ""
+            - tap: ""
+            - tap: ""
+
+    adj_layer:
+        left:
+            - ["", QWERTY, QWERTY, QWERTY, "", ""]
+            - [Reset, BT0, BT1, BT2, BT3, BT4]
+            - [Boot, Gui, Alt, Ctrl, Shift, ""]
+        right:
+            - ["", F11, F12, PrtSc, EP_OFF, EP_ON]
+            - ["", "", "", "", "", Reset]
+            - ["", "", USB, BLE, "", Boot]
+        left_thumbs:
+            - tap: Gui
+            - tap: Shift
+            - tap: ""
+            - tap: ""
+            - tap: Space
+        right_thumbs:
+            - tap: Ctrl
+            - tap: Alt
+            - tap: ""
+            - tap: ""
+            - tap: ""
+
