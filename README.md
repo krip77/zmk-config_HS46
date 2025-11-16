@@ -39,6 +39,21 @@ Your copies of the default Hillside keymaps are in:
 
 Modify those as needed. Pushing the change will trigger a build as above.
 
+## Keymap Visualization
+
+A visual representation of the Hillside46 keymap with Swedish Unicode characters is available:
+
+📊 **[View Keymap Visualization](./visualization/hillside46_layout.svg)**
+
+The visualization shows all 5 layers (Default, Navigation, Symbols, Adjust, NumPad) with Swedish characters (å, ä, ö) properly displayed.
+
+To regenerate the visualization after changing the keymap:
+```bash
+./regenerate_keymap_visualization.sh
+```
+
+*Requires [keymap-drawer](https://github.com/caksoylar/keymap-drawer) installed via `pipx install keymap-drawer`*
+
 If you want to enable features,
   modify the appropriate ./config/hillside*.conf file.
 
