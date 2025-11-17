@@ -127,6 +127,12 @@
             bindings = <&kp LG(V)>;
             key-positions = <16 15>;
         };
+
+        leftClick5 {
+            bindings = <&mkp LCLK>;
+            key-positions = <18 19>;
+            layers = <5>;
+        };
     };
 
     behaviors {
